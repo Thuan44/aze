@@ -3,17 +3,15 @@
 <?php
 @$categoryId = $_POST['category_id'];
 @$productId = $_POST['product_id'];
-@$brandId = $_POST['brand_id'];
 @$productName = htmlspecialchars($_POST['product_name']);
 @$productPrice = htmlspecialchars($_POST['product_price']);
 @$productStock = htmlspecialchars($_POST['product_stock']);
 @$productDescription = htmlspecialchars($_POST['product_description']);
 
 $listCategories = listCategories();
-$listBrands = listBrands();
 
 if (isset($_POST['add'])) {
-    addProduct($brandId, $productName, $productDescription, $productPrice, $productStock, $categoryId);
+    addProduct($productName, $productDescription, $productPrice, $productStock, $categoryId);
 }
 ?>
 

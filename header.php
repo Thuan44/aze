@@ -23,8 +23,8 @@ include_once 'admin/functions.php';
     <div id="app">
 
         <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-lg fixed-top">
-            <router-link class="navbar-brand font-weight-bold" style="border: 2px solid #fff; border-radius: 50px; padding: 5px 10px" to="/">AZE</router-link>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+            <router-link class="navbar-brand font-weight-bold text-secondary" style="border: 2px solid #1A1A1A; border-radius: 50px; padding: 5px 10px" to="/">AZE</router-link>
             <?php if (@($_SESSION['user_role']) == 5 ) { ?>
                 <a href="admin/index.php" class="btn btn-warning btn-sm mr-4">Go to Back-Office</a>
             <?php } ?>
@@ -39,19 +39,19 @@ include_once 'admin/functions.php';
                 </form>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <router-link class="nav-link text-white" to="/contact">Contact <span class="text-warning"><i class="fas fa-comment"></i></span></router-link>
+                        <router-link class="nav-link text-secondary" to="/contact">Contact <span class="text-warning"><i class="fas fa-comment"></i></span></router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link text-white" to="/cart">Panier <span class="text-warning"><i class="fas fa-shopping-cart"></i></span></router-link>
+                        <router-link class="nav-link text-secondary" to="/cart">Panier <span class="text-warning"><i class="fas fa-shopping-cart"></i></span></router-link>
                     </li>
                     <!-- Sign out button -->
                     <?php if (isset($_SESSION['user_name'])) { ?>
                         <li class="nav-item mr-0">
-                            <a href="logout.php" class="nav-link text-white">Déconnexion <span class="text-warning"><i class="fas fa-sign-out-alt"></i></span></a>
+                            <a href="logout.php" class="nav-link text-secondary">Déconnexion <span class="text-warning"><i class="fas fa-sign-out-alt"></i></span></a>
                         </li>
                     <?php } else { ?>
                         <li class="nav-item">
-                            <a href="login.php" class="nav-link text-white">Connexion <span class="text-warning"><i class="fas fa-sign-in-alt"></i></span></a>
+                            <a href="login.php" class="nav-link text-secondary">Connexion <span class="text-warning"><i class="fas fa-sign-in-alt"></i></span></a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -60,15 +60,15 @@ include_once 'admin/functions.php';
         </nav>
         
         
-        <div class="second-nav bg-primary pb-1 shadow-lg">
+        <div class="second-nav bg-secondary pb-1 shadow-sm">
             <ul class="d-flex list-unstyled">
                 <li v-for="category in allCategories" class="nav-item">
-                    <a href="#" class="nav-link text-white p-0">{{ category.category_name }}</a>
+                    <a href="#" class="nav-link text-secondary p-0">{{ category.category_name }}</a>
                 </li>
             </ul>
             <!-- Greeting  -->
             <?php if (isset($_SESSION['user_name'])) { ?>
-                <small class="text-white greeting-guest text-capitalize">Bonjour, <?php echo $_SESSION['user_name'] ?>.</small>
+                <small class="text-secondary greeting-guest text-capitalize">Bonjour, <?php echo $_SESSION['user_name'] ?>.</small>
             <?php } ?>
         </div>
 

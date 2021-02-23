@@ -88,14 +88,14 @@ function listProducts($categoryId, $brandId) {
 
 
 # ADD PRODUCT =============
-function addProduct($brandId, $productName, $productDescription, $productPrice, $productStock, $categoryId) {
+function addProduct($productName, $productDescription, $productPrice, $productStock, $categoryId) {
     global $connection;
 
-    $query = "INSERT INTO products (brand_id, product_name, product_description, product_price, product_stock, category_id)
-            VALUES (?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO products (product_name, product_description, product_price, product_stock, category_id)
+            VALUES (?, ?, ?, ?, ?)";
     $result = $connection->prepare($query);
     $result->execute(array(
-        $brandId, $productName, $productDescription, $productPrice, $productStock, $categoryId
+        $productName, $productDescription, $productPrice, $productStock, $categoryId
     ));
 
     $productId = $connection->lastInsertId();
@@ -168,7 +168,7 @@ function uploadImg($productId) {
     
             $j++; // increment the number of uploaded images according to the files in array
 
-            if (($_FILES['file']['size'][$i] < 300000) //Approx. 100kb files can be upload.  
+            if (($_FILES['file']['size'][$i] < 800000) //Approx. 100kb files can be upload.  
                 && in_array($file_extension, $validextensions)) {
                 if (move_uploaded_file($_FILES['file']['tmp_name'][$i], $target_path)) { // If file moved to uploads folder
                     echo $j. ').<span id="noerror">Image uploaded successfully!.</span><br/><br/>';

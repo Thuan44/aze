@@ -86,7 +86,7 @@ const Home = {
                                     <div class="card-body d-flex flex-column -justify-content-center">
                                         <h5 class="card-title mb-1" style="font-family: 'Tajawal', sans-serif;">{{ product.product_name }}</h5>
                                         <p class="card-text mb-3">{{ product.category_name }}</p>
-                                        <h4 class="product-price">\${{ product.product_price }}</h4>
+                                        <h4 class="product-price">{{ product.product_price }}€</h4>
                                         <div class="d-flex justify-content-center">
                                             <router-link :to="{name: 'ProductSheet', params: { id: product.product_id, product: product }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
                                             <!-- <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id)" class="btn btn-warning rounded-lg btn-card text-capitalize"><i class="fas fa-cart-plus"></i></button> -->
@@ -108,7 +108,7 @@ const Home = {
                                     <div class="card-body d-flex flex-column -justify-content-center">
                                         <h5 class="card-title mb-1" style="font-family: 'Tajawal', sans-serif;">{{ product.product_name }}</h5>
                                         <p class="card-text mb-3">{{ product.category_name }}</p>
-                                        <h4 class="product-price">\${{ product.product_price }}</h4>
+                                        <h4 class="product-price">{{ product.product_price }}€</h4>
                                         <div class="d-flex justify-content-center">
                                             <router-link :to="{name: 'ProductSheet', params: { id: product.product_id, product: product }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
                                             <!-- <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id)" class="btn btn-warning rounded-lg btn-card text-capitalize"><i class="fas fa-cart-plus"></i></button> -->
