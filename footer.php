@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="copyright text-white">© 2021 We Love Techno</div>
+        <div class="copyright text-white">© 2021 AZE Création</div>
 
         <div class="social-media text-white d-flex">
             <div class="social-icon mr-2"><i class="fab fa-facebook"></i></div>

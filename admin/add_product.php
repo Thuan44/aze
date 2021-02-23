@@ -32,7 +32,7 @@ if (isset($_POST['add'])) {
             <div class="row">
 
                 <!-- Categories -->
-                <div class="col-xs-12 col-md-6">
+                <div class="col-12">
                     <div class="form-group">
                         <select class="custom-select" name="category_id" onChange="submit()" required>
                             <option selected="">1. Choisissez une catégorie</option>
@@ -46,18 +46,6 @@ if (isset($_POST['add'])) {
                     </div>
                 </div>
 
-                <!-- Brands -->
-                <div class="col-xs-12 col-md-6">
-                    <div class="form-group">
-                        <select class="custom-select" name="brand_id" onChange="submit()" required>
-                            <option selected="">2. Choisissez une marque</option>
-                            <?php foreach ($listBrands as $brand) : ?>
-                                <option value="<?php echo $brand['brand_id'] ?>" <?php if ($brand['brand_id'] === @$_POST['brand_id']) { echo "selected"; } ?>><?= $brand['brand_name'] ?>
-                            </option>
-                            <?php endforeach ?>
-                        </select>
-                    </div>
-                </div>
             </div>
 
             <!-- Inputs -->

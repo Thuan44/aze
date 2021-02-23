@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We Love Techno</title>
+    <title>AZE</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -40,10 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
 
 <body style="background-color: #fff">
 
-    <h1 class="rounded border p-2 m-4 text-center text-white bg-primary text-uppercase">We already <span class="text-warning">♥︎</span> you!</h1>
+    <h1 class="rounded border p-2 m-4 text-center text-white bg-primary text-uppercase">AZE CRÉATION</h1>
 
     <div class="heading">
-        <h2 class="text-center mb-3 mt-5">Sign up</h2>
+        <h2 class="text-center mb-3 mt-5">Inscription</h2>
     </div>
 
     <div class="container shadow-sm rounded" style="max-width: 600px;">
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
                     <div class="row">
                         <!-- Name -->
                         <div class="col-md-12 mb-3">
-                            <label for="name">Your name*</label>
+                            <label for="name">Votre nom*</label>
                             <input type="text" id="name" name="name" class="form-control" value="">
                             <p class="comments text-danger"><?php echo $nameError; ?></p>
                         </div>
@@ -69,19 +69,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
 
                         <!-- Password-->
                         <div class="col-md-12 mb-3">
-                            <label for="password">Choose a password*</label>
+                            <label for="password">Choisissez un mot de passe*</label>
                             <input type="password" id="password" name="password" class="form-control" value="">
                             <p class="comments"><?php echo $passwordError; ?></p>
                         </div>
 
                         <!-- Required info -->
                         <div class="col-md-12 mb-3">
-                            <p class="font-italic">*These fields are required</p>
+                            <p class="font-italic">*Ces champs sont requis</p>
                         </div>
 
                         <!-- Submit -->
                         <div class="col-md-12">
-                            <input type="submit" class="btn btn-primary p-2 w-100" value="Create account">
+                            <input type="submit" class="btn btn-primary p-2 w-100" value="Créer compte">
                         </div>
 
 
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
 
                 </form>
 
-                <a href="login.php" class="text-center d-block" style="color: #979797"><small>Back to login</small></a>
+                <a href="login.php" class="text-center d-block" style="color: #979797"><small>Retour à la connexion</small></a>
 
             </div>
         </div>

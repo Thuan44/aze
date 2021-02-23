@@ -25,12 +25,11 @@ if($received_data->action == 'checkuser')
 
 
 # FETCH TABLES ====================================
-// Get all products joined with categories, brands and images
+// Get all products joined with categories and images
 if($received_data->action == 'fetchallproducts')
 {
     $query = "SELECT * FROM products
             INNER JOIN categories ON products.category_id = categories.category_id
-            INNER JOIN brands ON products.brand_id = brands.brand_id
             INNER JOIN images ON products.product_id = images.product_id
             ORDER BY product_name ASC";
     $result = $connect->prepare($query);
@@ -55,20 +54,6 @@ if($received_data->action == 'fetchallcategories')
     echo json_encode($data);
 }
 
-// Get all brands
-if($received_data->action == 'fetchallbrands')
-{
-    $query = "SELECT * FROM brands";
-    $result = $connect->prepare($query);
-    $result->execute();
-    while($row = $result->fetch(PDO::FETCH_ASSOC))
-    {
-        $data[] = $row;
-    }
-    echo json_encode($data);
-}
-
-
 
 # PRODUCT SHEET ==============================
 // Display product with no image
@@ -78,7 +63,6 @@ if($received_data->action == 'fetchselectedproduct')
     $data = (object) '';
 
     $query = "SELECT * FROM products
-            INNER JOIN brands ON products.brand_id = brands.brand_id
             WHERE product_id = ?";
     $result = $connect->prepare($query);
     $result->execute([$received_data->productId]);

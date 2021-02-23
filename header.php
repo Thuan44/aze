@@ -34,7 +34,7 @@ include_once 'admin/functions.php';
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <form class="form-inline my-2 my-lg-0 search-bar">
-                    <input class="form-control form-control-sm mr-sm-2 search-input" style="width: 300px; border-radius: 50px;" type="search" placeholder="Looking for something ?" aria-label="Search">
+                    <input class="form-control form-control-sm mr-sm-2 search-input" style="width: 300px; border-radius: 50px;" type="search" placeholder="Que recherchez-vous ?" aria-label="Search">
                     <button class="btn btn-outline-success btn-sm my-2 my-sm-0" style="border-radius: 50px;" type="submit"><i class="fas fa-search"></i></button>
                 </form>
                 <ul class="navbar-nav ml-auto">
@@ -42,16 +42,16 @@ include_once 'admin/functions.php';
                         <router-link class="nav-link text-white" to="/contact">Contact <span class="text-warning"><i class="fas fa-comment"></i></span></router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link text-white" to="/cart">Cart <span class="text-warning"><i class="fas fa-shopping-cart"></i></span></router-link>
+                        <router-link class="nav-link text-white" to="/cart">Panier <span class="text-warning"><i class="fas fa-shopping-cart"></i></span></router-link>
                     </li>
                     <!-- Sign out button -->
                     <?php if (isset($_SESSION['user_name'])) { ?>
                         <li class="nav-item mr-0">
-                            <a href="logout.php" class="nav-link text-white">Logout <span class="text-warning"><i class="fas fa-sign-out-alt"></i></span></a>
+                            <a href="logout.php" class="nav-link text-white">Déconnexion <span class="text-warning"><i class="fas fa-sign-out-alt"></i></span></a>
                         </li>
                     <?php } else { ?>
                         <li class="nav-item">
-                            <a href="login.php" class="nav-link text-white">Login <span class="text-warning"><i class="fas fa-sign-in-alt"></i></span></a>
+                            <a href="login.php" class="nav-link text-white">Connexion <span class="text-warning"><i class="fas fa-sign-in-alt"></i></span></a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -68,7 +68,7 @@ include_once 'admin/functions.php';
             </ul>
             <!-- Greeting  -->
             <?php if (isset($_SESSION['user_name'])) { ?>
-                <small class="text-white greeting-guest text-capitalize">Hi, <?php echo $_SESSION['user_name'] ?>.</small>
+                <small class="text-white greeting-guest text-capitalize">Bonjour, <?php echo $_SESSION['user_name'] ?>.</small>
             <?php } ?>
         </div>
 

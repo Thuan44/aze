@@ -4,7 +4,10 @@ const Home = {
     template: `
         <div>
 
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        
+        <div class="container-fluid mt-5">
+        
+            <div id="carouselExampleIndicators" class="carousel slide px-5 mx-4" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -12,13 +15,13 @@ const Home = {
                 </ol> 
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./assets/img/iphone_xr.png" class="d-block w-100" alt="...">
+                        <img src="./assets/img/carousel_img_1_resized.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="./assets/img/nasdaq.png" class="d-block w-100" alt="...">
+                        <img src="./assets/img/carousel_img_2_resized.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="./assets/img/ventes_flash.jpg" class="d-block w-100" alt="...">
+                        <img src="./assets/img/carousel_img_3_resized.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -31,143 +34,104 @@ const Home = {
                 </a>
             </div>
 
-            <div class="container-fluid">
-            
-                <h1 class="mt-5 text-center" style="font-family: 'Fjalla One', sans-serif;">All our products</h1><p class="text-center" style="color: #777">The best high-tech devices at the lowest possible price</p>
-                <div class="divider"></div>
+            <h1 class="mt-5 text-center" style="font-family: 'Fjalla One', sans-serif;">Tous nos produits</h1><p class="text-center" style="color: #777">Le street wear nantais mixte, éthique et Made in France</p>
+            <div class="divider"></div>
 
-                <div class="centering-container">
+            <div class="centering-container">
 
-                    <aside class="filter-sidebar d-inline-block shadow-sm">
-                        <div class="card">
+                <aside class="filter-sidebar d-inline-block shadow-sm">
+                    <div class="card">
 
-                            <!-- Searchbar -->
-                            <article class="card-group-item">
-                                <div class="filter-content">
-                                    <div class="card-body">
-                                                <label>Looking for something  ?</label>
-                                                <input type="search" class="form-control border w-100" id="searchbar" placeholder="Search a product" v-model="searchTerm">
-                                    </div> <!-- card-body.// -->
-                                </div>
-                            </article> <!-- card-group-item.// -->
+                        <!-- Searchbar -->
+                        <article class="card-group-item">
+                            <header class="card-header">
+                                <h6 class="title m-0">RECHERCHER</h6>
+                            </header>
+                            <div class="filter-content">
+                                <div class="card-body">
+                                            <input type="search" class="form-control border w-100" id="searchbar" placeholder="Rechercher un produit" v-model="searchTerm">
+                                </div> <!-- card-body.// -->
+                            </div>
+                        </article> <!-- card-group-item.// -->
 
-                            <!-- Price filter -->
-                            <article class="card-group-item">
-                                <header class="card-header">
-                                    <h6 class="title m-0">Price </h6>
-                                </header>
+                        <!-- Category filter -->
+                        <article class="card-group-item">
+                            <header class="card-header">
+                                <h6 class="title m-0">Categories</h6>
+                            </header>
+                            <div class="filter-content">
+                                <div class="card-body">
+                                    <div v-for="product in allCategories">
+                                        <div class="custom-control custom-checkbox">
+                                            <span class="float-right badge badge-light round">7</span>
+                                            <input type="checkbox" class="custom-control-input" :id="product.category_name" :value="product.category_name" v-model="selectedCategories">
+                                            <label class="custom-control-label" :for="product.category_name">{{ product.category_name }}</label>
+                                        </div> <!-- form-check.// -->
+                                    </div>
+                                </div> <!-- card-body.// -->
+                            </div>
+                        </article> <!-- card-group-item.// -->
+                        
+                    </div> <!-- card.// -->
+                </aside>
 
-                                <div class="filter-content">
-                                    <div class="card-body">
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label>Min</label>
-                                                <input type="number" class="form-control border" id="inputEmail4" placeholder="$0">
-                                            </div>
-                                            <div class="form-group col-md-6 text-right">
-                                                <label>Max</label>
-                                                <input type="number" class="form-control border" placeholder="$2,000">
-                                            </div>
-                                        </div>
-                                    </div> <!-- card-body.// -->
-                                </div>
-                            </article> <!-- card-group-item.// -->
-
-                            <!-- Category and Brand filters -->
-                            <article class="card-group-item">
-                                <header class="card-header">
-                                    <h6 class="title m-0">Categories</h6>
-                                </header>
-                                <div class="filter-content">
-                                    <div class="card-body">
-                                        <div v-for="product in allCategories">
-                                            <div class="custom-control custom-checkbox">
-                                                <span class="float-right badge badge-light round">7</span>
-                                                <input type="checkbox" class="custom-control-input" :id="product.category_name" :value="product.category_name" v-model="selectedCategories">
-                                                <label class="custom-control-label" :for="product.category_name">{{ product.category_name }}</label>
-                                            </div> <!-- form-check.// -->
-                                        </div>
-                                    </div> <!-- card-body.// -->
-                                </div>
-
-                                <header class="card-header">
-                                    <h6 class="title m-0">Brands</h6>
-                                </header>
-                                <div class="filter-content">
-                                    <div class="card-body">
-                                        <div v-for="product in allBrands">
-                                            <div class="custom-control custom-checkbox">
-                                                <span class="float-right badge badge-light round">7</span>
-                                                <input type="checkbox" class="custom-control-input" :id="product.brand_name" :value="product.brand_name" v-model="selectedBrands">
-                                                <label class="custom-control-label" :for="product.brand_name">{{ product.brand_name }}</label>
-                                            </div> <!-- form-check.// -->
-                                        </div>
-                                    </div> <!-- card-body.// -->
-                                </div>
-                            </article> <!-- card-group-item.// -->
-                            
-                        </div> <!-- card.// -->
-                    </aside>
-
-                    <div v-if=" selectedCategories.length > 0 || selectedBrands.length > 0 || searchTerm !== '' " class="d-inline-block product-container">
-                        <div class="d-flex justify-content-center cards-container flex-wrap">
-                            <div v-for="product in filteredProducts" v-bind:key="product.product_id" class="mt-4">
-                                <div class="col-4">
-                                    <div class="card product-card shadow-sm p-3" style="width: 20rem;">
-                                        <img class="card-img-top" :src="getImgUrl(product.img_name)" alt="Card image cap">
-                                        <p v-if="product.product_stock <= 10 && product.product_stock > 0" class="card-text stock lead text-center"><i class="fas fa-exclamation-circle"></i> Almost Sold Out !</p>
-                                        <p v-if="product.product_stock == 0" class="card-text stock lead text-center text-danger"><i class="fas fa-sad-tear"></i> OUT OF STOCK !</p>
-                                        <div class="card-body d-flex flex-column -justify-content-center">
-                                            <h5 class="card-title mb-1" style="font-family: 'Tajawal', sans-serif;">{{ product.product_name }}</h5>
-                                            <p class="card-text mb-3">{{ product.category_name }}</p>
-                                            <h4 class="product-price">\${{ product.product_price }}</h4>
-                                            <div class="d-flex justify-content-center">
-                                                <router-link :to="{name: 'ProductSheet', params: { id: product.product_id, product: product }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
-                                                <!-- <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id)" class="btn btn-warning rounded-lg btn-card text-capitalize"><i class="fas fa-cart-plus"></i></button> -->
-                                            </div>
+                <div v-if=" selectedCategories.length > 0 || searchTerm !== '' " class="d-inline-block product-container">
+                    <div class="d-flex justify-content-center cards-container flex-wrap">
+                        <div v-for="product in filteredProducts" v-bind:key="product.product_id" class="mt-4">
+                            <div class="col-4">
+                                <div class="card product-card shadow-sm p-3" style="width: 20rem;">
+                                    <img class="card-img-top" :src="getImgUrl(product.img_name)" alt="Card image cap">
+                                    <p v-if="product.product_stock <= 10 && product.product_stock > 0" class="card-text stock lead text-center"><i class="fas fa-exclamation-circle"></i> STOCK LIMITÉ !</p>
+                                    <p v-if="product.product_stock == 0" class="card-text stock lead text-center text-danger"><i class="fas fa-sad-tear"></i> STOCK ÉPUISÉ !</p>
+                                    <div class="card-body d-flex flex-column -justify-content-center">
+                                        <h5 class="card-title mb-1" style="font-family: 'Tajawal', sans-serif;">{{ product.product_name }}</h5>
+                                        <p class="card-text mb-3">{{ product.category_name }}</p>
+                                        <h4 class="product-price">\${{ product.product_price }}</h4>
+                                        <div class="d-flex justify-content-center">
+                                            <router-link :to="{name: 'ProductSheet', params: { id: product.product_id, product: product }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
+                                            <!-- <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id)" class="btn btn-warning rounded-lg btn-card text-capitalize"><i class="fas fa-cart-plus"></i></button> -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div v-else class="d-inline-block product-container">
-                        <div class="d-flex justify-content-center cards-container flex-wrap">
-                            <div v-for="product in allProducts" v-bind:key="product.product_id" class="mt-4">
-                                <div class="col-4">
-                                    <div class="card product-card shadow-sm p-3" style="width: 20rem;">
-                                        <img class="card-img-top" :src="getImgUrl(product.img_name)" alt="Card image cap">
-                                        <p v-if="product.product_stock <= 10 && product.product_stock > 0" class="card-text stock lead text-center"><i class="fas fa-exclamation-circle"></i> Almost sold out !</p>
-                                        <p v-if="product.product_stock == 0" class="card-text stock lead text-center text-danger"><i class="fas fa-sad-tear"></i> OUT OF STOCK !</p>
-                                        <div class="card-body d-flex flex-column -justify-content-center">
-                                            <h5 class="card-title mb-1" style="font-family: 'Tajawal', sans-serif;">{{ product.product_name }}</h5>
-                                            <p class="card-text mb-3">{{ product.category_name }}</p>
-                                            <h4 class="product-price">\${{ product.product_price }}</h4>
-                                            <div class="d-flex justify-content-center">
-                                                <router-link :to="{name: 'ProductSheet', params: { id: product.product_id, product: product }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
-                                                <!-- <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id)" class="btn btn-warning rounded-lg btn-card text-capitalize"><i class="fas fa-cart-plus"></i></button> -->
-                                            </div>
+                </div>
+                <div v-else class="d-inline-block product-container">
+                    <div class="d-flex justify-content-center cards-container flex-wrap">
+                        <div v-for="product in allProducts" v-bind:key="product.product_id" class="mt-4">
+                            <div class="col-4">
+                                <div class="card product-card shadow-sm p-3" style="width: 20rem;">
+                                    <img class="card-img-top" :src="getImgUrl(product.img_name)" alt="Card image cap">
+                                    <p v-if="product.product_stock <= 10 && product.product_stock > 0" class="card-text stock lead text-center"><i class="fas fa-exclamation-circle"></i> STOCK LIMITÉ !</p>
+                                    <p v-if="product.product_stock == 0" class="card-text stock lead text-center text-danger"><i class="fas fa-sad-tear"></i> STOCK ÉPUISÉ !</p>
+                                    <div class="card-body d-flex flex-column -justify-content-center">
+                                        <h5 class="card-title mb-1" style="font-family: 'Tajawal', sans-serif;">{{ product.product_name }}</h5>
+                                        <p class="card-text mb-3">{{ product.category_name }}</p>
+                                        <h4 class="product-price">\${{ product.product_price }}</h4>
+                                        <div class="d-flex justify-content-center">
+                                            <router-link :to="{name: 'ProductSheet', params: { id: product.product_id, product: product }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
+                                            <!-- <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id)" class="btn btn-warning rounded-lg btn-card text-capitalize"><i class="fas fa-cart-plus"></i></button> -->
                                         </div>
-                                    </div> <!-- card.// -->
-                                </div> <!-- col.// -->
-                            </div> <!-- v-for.// -->
-                        </div> 
-                    </div> <!-- v-else.// -->
+                                    </div>
+                                </div> <!-- card.// -->
+                            </div> <!-- col.// -->
+                        </div> <!-- v-for.// -->
+                    </div> 
+                </div> <!-- v-else.// -->
 
-                </div> <!-- centering-container.// -->
+            </div> <!-- centering-container.// -->
 
-            </div> <!-- container-fluid.// -->
+        </div> <!-- container-fluid.// -->
         
-        </div>
+    </div>
     `,
     name: 'Home',
     data: () => {
         return {
             selectedCategories: [],
-            selectedBrands: [],
             allProducts: '',
             allCategories: '',
-            allBrands: '',
             searchTerm: '',
         }
     },
@@ -177,18 +141,14 @@ const Home = {
 
             // Filter by name
             if (this.searchTerm !== '') {
-                return filteredProducts = this.allProducts.filter((product) => { 
+                return filteredProducts = this.allProducts.filter((product) => {
                     return product.product_name.toLowerCase().includes(this.searchTerm.toLowerCase());
                 })
             }
 
-            // Filter by category and brand
-            if (this.selectedCategories.length && this.selectedBrands.length) {
-                filteredProducts = this.allProducts.filter(product => this.selectedCategories.includes(product.category_name) && this.selectedBrands.includes(product.brand_name));
-            } else if (this.selectedCategories.length) {
+            // Filter by category
+            if (this.selectedCategories.length) {
                 filteredProducts = this.allProducts.filter(product => this.selectedCategories.includes(product.category_name));
-            } else {
-                filteredProducts = this.allProducts.filter(product => this.selectedBrands.includes(product.brand_name));
             }
 
             return filteredProducts;
@@ -220,19 +180,11 @@ const Home = {
                     action: 'fetchallcategories'
                 }).then(response => (this.allCategories = response.data))
         },
-        // Get all brands from database
-        fetchAllBrands() {
-            axios
-                .post('./admin/action.php', {
-                    action: 'fetchallbrands'
-                }).then(response => (this.allBrands = response.data))
-        },
     },
     created() {
         // Call fetchAll functions
         this.fetchAllProducts();
         this.fetchAllCategories();
-        this.fetchAllBrands();
     },
 }
 
@@ -387,9 +339,9 @@ const ProductSheet = {
         }
     },
     methods: {
-        checkUser() {
+        checkUser() {
             axios
-                .post('./admin/action.php', {
+                .post('./admin/action.php', {
                     action: 'checkuser'
                 })
                 .then(response => (this.currentUser = response.data))
@@ -401,7 +353,7 @@ const ProductSheet = {
         getExtraImgUrl(picture) {
             return "./assets/extraImg/" + picture;
         },
-        selectCartId() {
+        selectCartId() {
             axios
                 .post('./admin/action.php', {
                     action: 'selectcartid',
@@ -426,7 +378,7 @@ const ProductSheet = {
                     })
             }
         },
-        addReview(productId) {
+        addReview(productId) {
             axios
                 .post('./admin/action.php', {
                     action: 'addreview',
@@ -438,7 +390,7 @@ const ProductSheet = {
         },
         fetchAllReviews() {
             axios
-                .post('./admin/action.php', {
+                .post('./admin/action.php', {
                     action: 'fetchallreviews',
                     productId: this.selectedId
                 })
@@ -446,29 +398,29 @@ const ProductSheet = {
         },
         fetchSelectedProduct() {
             axios
-                .post('./admin/action.php', {
+                .post('./admin/action.php', {
                     action: 'fetchselectedproduct',
                     productId: this.selectedId
                 })
                 .then(response => (this.product = response.data))
         },
-        fetchRelatedImg() {
+        fetchRelatedImg() {
             axios
-                .post('./admin/action.php', {
+                .post('./admin/action.php', {
                     action: 'fetchrelatedimg',
                     productId: this.selectedId
                 })
                 .then(response => (this.relatedImg = response.data))
         },
-        showToast() {
-            if(this.currentUser.length == 1) {
+        showToast() {
+            if (this.currentUser.length == 1) {
                 $('#toast').toast('show');
             } else {
                 $('#toast-not-logged').toast('show');
             }
         }
     },
-    created() {
+    created() {
         this.checkUser();
         this.selectCartId();
         this.fetchAllReviews();
@@ -612,9 +564,9 @@ const Cart = {
         }
     },
     methods: {
-        checkUser() {
+        checkUser() {
             axios
-                .post('./admin/action.php', {
+                .post('./admin/action.php', {
                     action: 'checkuser'
                 })
                 .then(response => (this.currentUser = response.data))
@@ -637,10 +589,10 @@ const Cart = {
                         if (this.allProductsInCart[i].product_quantity > 1) {
                             this.allProductsInCart[i].product_quantity--;
                         }
-                    // Increment
+                        // Increment
                     } else if (updateType === 'add') {
                         this.allProductsInCart[i].product_quantity++;
-                     // V-model input changed
+                        // V-model input changed
                     } else {
                         axios
                             .post('./admin/action.php', {
