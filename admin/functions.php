@@ -77,10 +77,10 @@ function listBrands() {
 }
 
 // List of products
-function listProducts($categoryId, $brandId) {
+function listProducts($categoryId) {
     global $connection;
 
-    $query = "SELECT * FROM products WHERE category_id = $categoryId AND brand_id = $brandId";
+    $query = "SELECT * FROM products WHERE category_id = $categoryId";
     $result = $connection->prepare($query);
     $result->execute();
     return $result->fetchAll();

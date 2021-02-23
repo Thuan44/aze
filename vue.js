@@ -3,7 +3,6 @@
 const Home = {
     template: `
         <div>
-
         
         <div class="container-fluid mt-5">
         
@@ -217,7 +216,7 @@ const ProductSheet = {
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 pr-4 align-self-center">
                         <div class="product-img">
                             <img :src="getImgUrl(relatedImg.img_name)" alt="product-image">
-                            <p class="font-italic text-center" style="color: rgba(50, 50, 50, .4)">Hover the thumbnails to see more images</p>
+                            <p class="font-italic text-center" style="color: rgba(50, 50, 50, .4)">Passez sur les miniatures les agrandir</p>
                         </div>
                     </div> <!-- col.// -->
 
@@ -225,25 +224,26 @@ const ProductSheet = {
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 px-4">
                         <h4 class="product-title" >{{ product.product_name }}</h4>
                         <div class="badge badge-pill badge-primary pb-1">{{ product.brand_name }}</div>
-                        <small class="text-uppercase product-availability d-block">Availability: 
-                            <span v-if="product.product_stock < 10" class="text-danger"><u>Limited stock</u></span>
-                            <span v-else class="text-success"><u>In stock</u></span>
+                        <small class="text-uppercase product-availability d-block">Disponibilité: 
+                            <span v-if="product.product_stock == 0" class="text-danger"><u>Rupture de stock</u></span>
+                            <span v-else-if="product.product_stock < 10" class="text-warning"><u>Stock limité</u></span>
+                            <span v-else class="text-success"><u>En stock</u></span>
                         </small>
                         <div class="single-product-price text-danger">\${{ product.product_price }}</div>
                         <div class="product-divider"></div>
                         <div class="d-flex flex-column justify-content-between h-75 group-description-price">
                             <div class="product-description">
-                                <h5 class="text-lowercase"><span class="text-capitalize">About</span> this product</h5>
+                                <h5 class="text-lowercase"><span class="text-capitalize">À</span> propos de ce produit</h5>
                                 <p class="text-justify">{{ product.product_description }}</p>
                                 <div class="mx-4 mt-3 p-1 text-center contact-us">
-                                    <small class="text-white">You have a question about this product ? <router-link class="text-white" to="/contact"><u>Let us know here.</u></router-link></small>
+                                    <small class="text-white">Vous avez une question concernant cet article ? <router-link class="text-white" to="/contact"><u>Contactez-nous ici.</u></router-link></small>
                                 </div>
-                                <small class="mt-3 float-right"><a href="#">See order settings \> </a></small>
+                                <small class="mt-3 float-right"><a href="#">Voir mes préférences de livraison \> </a></small>
                             </div>
                             <div>
                                 <div class="product-divider"></div>
                                 <div class="product-validation float-right">
-                                    <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id); showToast()" type="submit" class="btn btn-outline-success btn-sm rounded shadow-sm" id="add-to-cart">Add  to cart</button></td>
+                                    <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id); showToast()" type="submit" class="btn btn-outline-success btn-sm rounded shadow-sm" id="add-to-cart">Ajouter au panier</button></td>
                                 </div>
                             </div>
                         </div>
@@ -252,17 +252,17 @@ const ProductSheet = {
                 </div> <!-- row.// -->
 
                 <!-- CUSTOMER REVIEWS -->
-                <h4 class="text-left mt-5 ml-5" style="font-family: 'Fjalla One', sans-serif;">Customer reviews</h4>
+                <h4 class="text-left mt-5 ml-5" style="font-family: 'Fjalla One', sans-serif;">Avis clients</h4>
 
                 <!-- ADD REVIEW -->
                 <div v-if="currentUser.length == 1" class="card mx-5 my-3 rounded shadow-sm">
-                    <h5 class="card-header">Leave a review:</h5>
+                    <h5 class="card-header">Laisser un avis :</h5>
                     <div class="card-body">
                         <form action="" method="POST" v-on:submit.prevent="addreview">
                             <div class="form-group">
                                 <textarea class="form-control border" name="comment_content" rows="3" v-model="reviewContent"></textarea>
                             </div>
-                            <button @click="addReview(product.product_id)" type="submit" name="add-comment" class="btn btn-primary btn-sm rounded float-right">Post</button>
+                            <button @click="addReview(product.product_id)" type="submit" name="add-comment" class="btn btn-primary btn-sm rounded float-right">Publier</button>
                         </form>
                     </div>
                 </div> <!-- card.// -->
@@ -281,13 +281,12 @@ const ProductSheet = {
                                     <span class="float-right"><i class="text-warning fa fa-star"></i></span>
                                     <span class="float-right"><i class="text-warning fa fa-star"></i></span>
                                     <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-
                                 </p>
                                 <div class="clearfix"></div>
                                 <p class="text-justify">{{ review.review_content }}</p>
                                 <p>
-                                    <a class="float-right btn btn-primary ml-2 btn-sm rounded"> <i class="fa fa-reply"></i> Reply</a>
-                                    <a class="float-right btn text-white btn-danger btn-sm rounded"> <i class="fa fa-heart"></i> Like</a>
+                                    <a class="float-right btn btn-primary ml-2 btn-sm rounded"> <i class="fa fa-reply"></i> Répondre</a>
+                                    <a class="float-right btn text-white btn-danger btn-sm rounded"> <i class="fa fa-heart"></i> J'aime</a>
                                 </p>
                             </div>  <!-- col.// -->
                         </div> <!-- row.// -->
@@ -437,7 +436,7 @@ const Contact = {
 
         <div class="container page-container">
 
-            <h1 class="mt-5 text-center page-title" style="font-family: 'Fjalla One', sans-serif;">Contact</h1><p class="text-center" style="color: #777">Let's keep in touch !</p>
+            <h1 class="mt-5 text-center page-title" style="font-family: 'Fjalla One', sans-serif;">Contact</h1><p class="text-center" style="color: #777">REstons en contact !</p>
             <div class="divider"></div>
 
             <div class="form-container shadow-sm rounded bg-white py-4 px-5" style="max-width: 600px; margin: 0 auto">
@@ -448,35 +447,35 @@ const Contact = {
                             <div class="form-check mr-5">
                                 <label class="form-check-label">
                                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                                    Say Hi
+                                    Faire coucou
                                 </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
                                     <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                                    Get assisted
+                                    Demander assistance
                                 </label>
                             </div>
                         </fieldset>
                         <div class="form-group">
-                            <label for="firstname">First name</label>
-                            <input type="text" class="form-control" id="firstname" placeholder="Enter your first name">
+                            <label for="firstname">Prénom</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="Entrez votre prénom">
                         </div>
                         <div class="form-group">
-                            <label for="lastname">Last name</label>
-                            <input type="text" class="form-control" id="lastname" placeholder="Enter your last name">
+                            <label for="lastname">Nom de famille</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Entrez votre nom de famille">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <label for="email">Adresse email</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Entrez votre email">
+                            <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre email avec une tierce personne.</small>
                         </div>
                         <div class="form-group">
-                            <label for="object">Object</label>
-                            <input type="text" class="form-control" id="object" placeholder="Enter the object of your message">
+                            <label for="object">Objet</label>
+                            <input type="text" class="form-control" id="object" placeholder="Entrez l'objet de votre message">
                         </div>
                         <div class="form-group">
-                            <label for="message">Your message</label>
+                            <label for="message">Votre message</label>
                             <textarea class="form-control" id="message" rows="3"></textarea>
                         </div>
                         <div style="text-align: center">
@@ -501,8 +500,8 @@ const Cart = {
     
         <div v-if="currentUser.length == 1" class="container page-container cart-container">
 
-            <h1 class="mt-5 text-center cart-title" style="font-family: 'Fjalla One', sans-serif;">Cart</h1>
-            <p class="text-center" style="color: #777">Summary of your articles</p>
+            <h1 class="mt-5 text-center cart-title" style="font-family: 'Fjalla One', sans-serif;">Panier</h1>
+            <p class="text-center" style="color: #777">Résumé des articles sélectionnés</p>
             <div class="divider"></div>
 
             <table class="table table-hover cart-table shadow-sm">
@@ -510,10 +509,10 @@ const Cart = {
                 <thead>
                     <tr class="text-white text-center font-weight-bold" style="background-color: #1A1A1A !important">
                         <th scope="col"></th>
-                        <th scope="col" colspan="2">Product</th>
-                        <th scope="col" class="quantity-col">Quantity</th>
-                        <th scope="col">Unit Price</th>
-                        <th scope="col" class="text-right">Total Price</th>
+                        <th scope="col" colspan="2">Produit</th>
+                        <th scope="col" class="quantity-col">Quantité</th>
+                        <th scope="col">Prix unitaire</th>
+                        <th scope="col" class="text-right">Prix total</th>
                     </tr>
                 </thead>
                 
@@ -537,11 +536,11 @@ const Cart = {
             <form action="#">
                 <div class="total-group d-flex flex-column">
                     <div class="d-flex align-items-center total-to-pay form-group mb-2 shadow-sm">
-                        <label for="total-to-pay" class="mb-0 total-label bg-primary text-white form-control text-uppercase text-center">Total to Pay</label>
+                        <label for="total-to-pay" class="mb-0 total-label bg-primary text-white form-control text-uppercase text-center">Total à payer</label>
                         <input id="total-to-pay" class="text-right total-input form-control bg-light" :value="totalToPay" />
                     </div>
                     <div class="btn-checkout shadow-sm">
-                        <a href="#" class="btn btn-success form-control">Proceed to Checkout <span class="pl-1"><i class="fas fa-credit-card"></i></span></a>
+                        <a href="#" class="btn btn-success form-control">Procéder au paiement<span class="pl-1"><i class="fas fa-credit-card"></i></span></a>
                     </div>
                 </div>
             </form>
@@ -550,8 +549,8 @@ const Cart = {
 
         <div v-else>
             <h1 class="mt-5 text-center cart-title" style="font-family: 'Fjalla One', sans-serif;">Oops</h1>
-            <p class="text-center" style="color: #777">You need to login first to access your cart !</p>
-            <a href="login.php" class="text-center d-block" style="color: #979797"><small>Go to login page</small></a>
+            <p class="text-center" style="color: #777">Vous devez être connecté pour accéder à votre panier !</p>
+            <a href="login.php" class="text-center d-block" style="color: #979797"><small>Se connecter</small></a>
         </div>
 
     </div>

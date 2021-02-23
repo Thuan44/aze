@@ -23,20 +23,25 @@ include_once 'admin/functions.php';
     <div id="app">
 
         <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary fixed-top">
+
+            <router-link to="/">
+                <div class="logo">
+                    <img src="assets/img/logo_transparent.png" alt="logo">
+                </div>
+            </router-link>
+
             <router-link class="navbar-brand font-weight-bold text-secondary" style="border: 2px solid #1A1A1A; border-radius: 50px; padding: 5px 10px" to="/">AZE</router-link>
             <?php if (@($_SESSION['user_role']) == 5 ) { ?>
                 <a href="admin/index.php" class="btn btn-warning btn-sm mr-4">Go to Back-Office</a>
             <?php } ?>
+            <p>Le street wear nantais mixte, éthique et Made in France</p>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor01">
-                <form class="form-inline my-2 my-lg-0 search-bar">
-                    <input class="form-control form-control-sm mr-sm-2 search-input" style="width: 300px; border-radius: 50px;" type="search" placeholder="Que recherchez-vous ?" aria-label="Search">
-                    <button class="btn btn-outline-success btn-sm my-2 my-sm-0" style="border-radius: 50px;" type="submit"><i class="fas fa-search"></i></button>
-                </form>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <router-link class="nav-link text-secondary" to="/contact">Contact <span class="text-warning"><i class="fas fa-comment"></i></span></router-link>
