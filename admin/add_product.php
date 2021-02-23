@@ -20,13 +20,13 @@ if (isset($_POST['add'])) {
 
 
 <div class="container">
-    <h1 class="rounded border p-2 mt-5 mb-4  text-center text-white bg-dark">Add a product</h1>
+    <h1 class="rounded border p-2 mt-5 mb-4  text-center text-white bg-dark">Ajouter un produit</h1>
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])  ?>" enctype="multipart/form-data" method="POST">
 
         <fieldset>
 
-            <legend class="text-center">Which product will you add ?</legend>
+            <legend class="text-center">Que souhaitez-vous ajouter ?</legend>
 
             <!-- Lists -->
             <div class="row">
@@ -35,7 +35,7 @@ if (isset($_POST['add'])) {
                 <div class="col-xs-12 col-md-6">
                     <div class="form-group">
                         <select class="custom-select" name="category_id" onChange="submit()" required>
-                            <option selected="">1. Select a category</option>
+                            <option selected="">1. Choisissez une catégorie</option>
                             <?php foreach ($listCategories as $category) : ?>
 
                                 <option value="<?php echo $category['category_id'] ?>" <?php if ($category['category_id'] === @$_POST['category_id']) { echo "selected"; } ?>><?= $category['category_name'] ?>
@@ -50,7 +50,7 @@ if (isset($_POST['add'])) {
                 <div class="col-xs-12 col-md-6">
                     <div class="form-group">
                         <select class="custom-select" name="brand_id" onChange="submit()" required>
-                            <option selected="">2. Select a brand</option>
+                            <option selected="">2. Choisissez une marque</option>
                             <?php foreach ($listBrands as $brand) : ?>
                                 <option value="<?php echo $brand['brand_id'] ?>" <?php if ($brand['brand_id'] === @$_POST['brand_id']) { echo "selected"; } ?>><?= $brand['brand_name'] ?>
                             </option>
@@ -64,24 +64,24 @@ if (isset($_POST['add'])) {
             <div class="row">
                 <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                        <input class="form-control" type="text" name="product_name" placeholder="Choose a name">
+                        <input class="form-control" type="text" name="product_name" placeholder="Choisissez un nom">
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                        <input class="form-control" type="text" name="product_price" placeholder="Choose a price">
+                        <input class="form-control" type="text" name="product_price" placeholder="Choisissez un prix">
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                        <input class="form-control" type="text" name="product_stock" placeholder="Set the quantity in stock">
+                        <input class="form-control" type="text" name="product_stock" placeholder="Définissez le stock">
                     </div>
                 </div>
             </div>
 
             <!-- Description -->
             <div class="form-group">
-                <textarea class="form-control" name="product_description" id="Product description" value="Add a description" rows="3" style="color: #919AA1;">Product description</textarea>
+                <textarea class="form-control" name="product_description" id="Product description" value="Ajoutez une description" rows="3" style="color: #919AA1;">Description du produit</textarea>
             </div>
 
             <!-- Upload image -->
@@ -89,12 +89,12 @@ if (isset($_POST['add'])) {
                 <div class="input-group mb-3">
                     <div class="custom-file">
                         <input type="file" name="file[]" multiple="multiple" class="custom-file-input" id="inputGroupFile02">
-                        <label class="custom-file-label" for="inputGroupFile02">Choose a file</label>
+                        <label class="custom-file-label" for="inputGroupFile02">Choisissez une image principale</label>
                     </div>
                 </div>
 
             <!-- Add Button -->
-            <button type="submit" name="add" class="btn btn-dark btn-md btn-block btn-midradius">Add to Database</button>
+            <button type="submit" name="add" class="btn btn-dark btn-md btn-block btn-midradius">Ajouter à la base de données</button>
 
         </fieldset>
 

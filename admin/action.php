@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-$connect = new PDO("mysql:host=localhost;dbname=welovetechno", "root", "root");
+$connect = new PDO("mysql:host=localhost;dbname=aze", "root", "root");
 $received_data = json_decode(file_get_contents("php://input"));
 $data = array();
 

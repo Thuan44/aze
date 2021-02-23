@@ -30,13 +30,13 @@ $listReviewsByProduct = listReviewsByProduct($productId);
 
 <div class="container">
 
-    <h1 class="rounded border p-2 mt-5 mb-4  text-center text-white bg-dark">Review Manager</h1>
+    <h1 class="rounded border p-2 mt-5 mb-4  text-center text-white bg-dark">Gestion des avis</h1>
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
 
         <fieldset>
 
-            <legend class="text-center">Manage your reviews as you need</legend>
+            <legend class="text-center">Gérez les avis produits</legend>
 
             <!-- Lists -->
             <div class="row">
@@ -45,7 +45,7 @@ $listReviewsByProduct = listReviewsByProduct($productId);
                 <div class="col-4">
                     <div class="form-group">
                         <select class="custom-select" name="category_id" onChange="submit()" required>
-                            <option selected="">1. Select a category</option>
+                            <option selected="">1. Choisissez une catégorie</option>
                             <?php foreach ($listCategories as $category) : ?>
 
                                 <option value="<?php echo $category['category_id'] ?>" <?php if ($category['category_id'] === @$_POST['category_id']) { echo "selected"; } ?>><?= $category['category_name'] ?>
@@ -60,7 +60,7 @@ $listReviewsByProduct = listReviewsByProduct($productId);
                 <div class="col-4">
                     <div class="form-group">
                         <select class="custom-select" name="brand_id" onChange="submit()" required>
-                            <option selected="">2. Select a brand</option>
+                            <option selected="">2. Choisissez une marque</option>
                             <?php foreach ($listBrands as $brand) : ?>
                                 <?php var_dump($brand) ?>
                                 <option value="<?php echo $brand['brand_id'] ?>" <?php if ($brand['brand_id'] === @$_POST['brand_id']) { echo "selected"; } ?>><?= $brand['brand_name'] ?>
@@ -74,7 +74,7 @@ $listReviewsByProduct = listReviewsByProduct($productId);
                 <div class="col-4">
                     <div class="form-group">
                         <select class="custom-select" name="product_id" onChange="submit()" required>
-                            <option>2. Select a product</option>
+                            <option>2. Choisissez un produit</option>
                             <?php foreach ($listProducts as $product) : ?>
                                 <option value="<?php echo $product['product_id'] ?>" <?php if ($product['product_id'] === @$_POST['product_id']) { echo "selected"; } ?>><?= $product['product_name'] ?>
                                 </option>
@@ -96,9 +96,9 @@ $listReviewsByProduct = listReviewsByProduct($productId);
             <thead class="bg-dark text-white text-center">
                 <tr>
                     <th scope="col">Date</th>
-                    <th scope="col">User</th>
-                    <th scope="col">Review</th>
-                    <th scope="col">State</th>
+                    <th scope="col">Utilisateur</th>
+                    <th scope="col">Avis</th>
+                    <th scope="col">État</th>
                     <th scope="col">Validation</th>
                     <th scope="col"></th>
                 </tr>

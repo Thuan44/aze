@@ -1,6 +1,6 @@
 <?php
    define("PDO_HOST", "localhost");
-   define("PDO_DBBASE", "welovetechno");
+   define("PDO_DBBASE", "aze");
    define("PDO_USER", "root");
    define("PDO_PW", "root");
  
