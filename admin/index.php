@@ -2,6 +2,7 @@
 
 
 <div class="container">
+    
     <h1 class="rounded border p-2 mt-5 mb-5 text-center text-white bg-dark text-uppercase">Bienvenue sur votre tableau de bord</h1>
 
     <div class="row">
@@ -34,5 +35,7 @@
         </div>
 
     </div>
+
+</div>
 
     <?php include_once 'footer_admin.php' ?>

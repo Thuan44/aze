@@ -32,7 +32,7 @@ include_once 'admin/functions.php';
                 </div>
             </router-link>
 
-            <router-link class="navbar-brand font-weight-bold text-secondary" style="border: 2px solid #1A1A1A; border-radius: 50px; padding: 5px 10px" to="/">AZE</router-link>
+            <router-link class="navbar-brand font-weight-bold text-secondary" style="border: 2px solid #1A1A1A; border-radius: 50px; padding: 5px 10px" to="/">AZE CREATION</router-link>
             <?php if (@($_SESSION['user_role']) == 5 ) { ?>
                 <a href="admin/index.php" class="btn btn-warning btn-sm mr-4">Go to Back-Office</a>
             <?php } ?>

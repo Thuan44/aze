@@ -2,41 +2,22 @@
 -- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Feb 09, 2021 at 01:47 PM
--- Server version: 5.7.32
--- PHP Version: 7.4.12
+-- Hôte : localhost:8889
+-- Généré le : jeu. 25 fév. 2021 à 09:19
+-- Version du serveur :  5.7.32
+-- Version de PHP : 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `welovetechno`
+-- Base de données : `aze`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brands`
---
-
-CREATE TABLE `brands` (
-  `brand_id` int(11) NOT NULL,
-  `brand_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `brands`
---
-
-INSERT INTO `brands` (`brand_id`, `brand_name`) VALUES
-(1, 'Apple'),
-(2, 'Huawei');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cart`
+-- Structure de la table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -47,7 +28,7 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `cart`
+-- Déchargement des données de la table `cart`
 --
 
 INSERT INTO `cart` (`cart_id`, `product_id`, `user_id`, `product_quantity`) VALUES
@@ -55,12 +36,17 @@ INSERT INTO `cart` (`cart_id`, `product_id`, `user_id`, `product_quantity`) VALU
 (213, 25, 2, 5),
 (214, 12, 2, 2),
 (215, 23, 2, 1),
-(216, 8, 2, 1);
+(216, 8, 2, 1),
+(219, 30, 2, 1),
+(220, 41, 2, 1),
+(221, 38, 2, 1),
+(222, 39, 1, 1),
+(223, 39, 2, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Structure de la table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -69,18 +55,18 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `categories`
+-- Déchargement des données de la table `categories`
 --
 
 INSERT INTO `categories` (`category_id`, `category_name`) VALUES
-(1, 'Smartphones'),
-(2, 'Computers'),
-(3, 'Accessories');
+(1, 'Vêtements'),
+(2, 'Accessoires'),
+(3, 'Enfants');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- Structure de la table `images`
 --
 
 CREATE TABLE `images` (
@@ -91,29 +77,32 @@ CREATE TABLE `images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `images`
+-- Déchargement des données de la table `images`
 --
 
 INSERT INTO `images` (`img_id`, `img_name`, `product_id`, `extra_img1`) VALUES
-(1, '600941d4f0cba.jpg', 8, ''),
-(3, '600951c9a8660.jpg', 11, ''),
-(4, '6009520b24740.jpg', 12, ''),
-(5, '600952287ad89.jpg', 13, ''),
-(9, '600963a046384.jpeg', 20, ''),
-(10, '600964bde69aa.jpg', 21, ''),
-(11, '6009657ec9fb2.jpg', 22, ''),
-(13, '600a88fae4a45.jpg', 23, ''),
-(15, '60117367830c4.jpg', 25, '60117814a94ba.jpg');
+(20, '60350b00a51a4.jpg', 28, ''),
+(21, '60350fca4c302.jpg', 29, ''),
+(22, '603510140debf.jpg', 30, ''),
+(23, '6035115068d75.jpg', 33, ''),
+(24, '603511621bf70.jpg', 34, ''),
+(25, '603513054f489.jpg', 35, ''),
+(26, '6035133d7085c.jpg', 36, ''),
+(27, '6035135766500.jpg', 37, ''),
+(28, '603514c95dd83.jpg', 38, ''),
+(29, '6035161b51ccc.jpg', 39, ''),
+(30, '60351661214e6.jpg', 40, ''),
+(31, '6035175d8fb02.jpg', 41, ''),
+(32, '60351779b0d18.jpg', 42, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Structure de la table `products`
 --
 
 CREATE TABLE `products` (
   `product_id` int(11) NOT NULL,
-  `brand_id` int(11) NOT NULL,
   `product_name` varchar(200) NOT NULL,
   `product_description` text NOT NULL,
   `product_price` float NOT NULL,
@@ -122,24 +111,24 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `products`
+-- Déchargement des données de la table `products`
 --
 
-INSERT INTO `products` (`product_id`, `brand_id`, `product_name`, `product_description`, `product_price`, `product_stock`, `category_id`) VALUES
-(8, 1, 'Macbook Pro', 'Macbook Pro description', 1499.99, 25, 2),
-(11, 2, 'Mate40 Pro', 'Voyez au-delà des apparences.\r\nExplorez l\'inconnu et laissez libre cours à votre imagination.\r\nFaites le plein de puissance et de vitesse pour un bond dans le futur.\r\nPrenez un temps d\'avance sur la technologie avec le HUAWEI Mate 40 Pro.', 1099.99, 100, 1),
-(12, 2, 'Huawei Matebook', 'Grâce à son très bel écran, cet ordinateur rend le visionnage de vidéo en plein écran très plaisant. Encore une fois, la lumière et les couleurs sont belles et la résolution est suffisamment élevée pour apprécier les détails.', 697.99, 30, 2),
-(13, 1, 'Airpods 2', 'Vos écouteurs APPLE vous embarquent dans une tout autre dimension, grâce à une autonomie agrandie et un boitier de charge sans fil performant et facilement rechargeable. Les AirPods sont des écouteurs sans fil, qui se connectent simplement à l\'approche de votre oreille, et se déconnectent lorsque vous les rangez dans le boitier prévu à cet effet', 159.99, 22, 3),
-(20, 1, 'Airpods Pro', 'Après le succès planétaire des AirPods, Apple revient avec une nouvelle version encore plus performante avec des fonctionnalités nouvelles comme la réduction de bruit, une égalisation adaptative et un nouveau design pour un meilleur soutien et un confort parfait.', 179.99, 0, 3),
-(21, 2, 'Huawei P20 Pro', 'Huawei nous gratifie d\'un P20 Pro qui ne manque pas d\'arguments pour installer la marque sur un marché où elle reste numéro 3. Le P20 Pro adopte tous les codes marketing en vogue pour séduire : écran Oled 19:9 avec encoche, triple module photo ou encore intelligence artificielle. Un savant mélange qui fait entrer Huawei dans la cour des grands.', 210.99, 9, 1),
-(22, 1, 'Black Magic Mouse 2', 'En plus de son nouveau design, la Magic Mouse 2 est maintenant rechargeable, ce qui vous évite d\'utiliser des piles. Avec sa batterie intégrée, son design optimisé et sa coque en une seule pièce, elle est plus légère et comprend moins de parties mobiles.', 89.99, 45, 3),
-(23, 1, 'iPhone 12 Pro', 'Apple innove toujours plus et met aujourd\'hui entre vos mains l\'iPhone 12 Pro Max, dernier né le plus pointu de l\'écurie iPhone. Une expérience visuelle hors pair Avec son iPhone 12 Pro Max, Apple révolutionne votre idée d\'un smartphone. L\'écran HDR 6,7 pouces de l\'appareil dispose d\'une résolution inégalée de 2778 x 1284 pixels et vous offre une expérience visuelle stupéfiante.', 999.99, 70, 1),
-(25, 2, 'Freebuds', 'Freebuds made by Huawei', 89.99, 35, 3);
+INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `product_price`, `product_stock`, `category_id`) VALUES
+(28, 'Masque tête de mort', 'À la mode ou sportif ? Votre style est unique.\r\nC\'est vous qui choisissez le style que vous voulez porter. Vous disposez de plusieurs catégories : couleurs pleines, géométries, motifs et différents visuels. Faites votre choix parmi les 270 motifs disponibles. Si vous ne trouvez pas ce que vous recherchez, vous avez la possibilité de télécharger votre visuel et ainsi personnaliser votre trumask™ à partir d\'un seul exemplaire.\r\n', 9.99, 15, 2),
+(30, 'Masque cercles', 'Masque grand public en tissu à motifs cerclés, fabriqué en France, catégorie 1.', 8.99, 6, 2),
+(34, 'Veste en jeans', 'Veste en jeans bleu denim avec col et manches longues. Les manches sont boutonnées. Cette veste se portera parfaitement au printemps comme en automne.', 69.99, 26, 1),
+(37, 'Short en jeans', 'Short en jean taille haute à revers - Bleu moyen', 29.99, 30, 1),
+(38, 'Sweat enfant', 'Sweat à capuche pour enfant entre 9 et 11 ans, multi-color et adapté à l\'hiver', 45.99, 16, 3),
+(39, 'Masque à pois', 'Masque à pois taille adulte, fabriqué en France. Confortable et aéré, vous pourrez le porter toute la journée sans craindre d\'être gêné.', 7.99, 25, 2),
+(40, 'Masque Navy', 'Masque en tissu couleur navy qui se fondra parfaitement avec votre tenue d\'hiver. Confortable et aéré, vous pourrez le porter tout au long de la journée sans craindre d\'être gêné.', 10.99, 40, 2),
+(41, 'Masque éventail', 'Masque à motifs éventails rose pale. Taille adulte, lanière élastiques et étirables. Sa légèreté vous garantira un confort optimal tout au long de votre journée. Idéale pour les balades longue durée.', 9.99, 4, 2),
+(42, 'Masque éventail 2', 'Masque à motifs éventails vert pale. Taille adulte, lanière élastiques et étirables. Sa légèreté vous garantira un confort optimal tout au long de votre journée. Idéale pour les balades longue durée.', 9.99, 0, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reviews`
+-- Structure de la table `reviews`
 --
 
 CREATE TABLE `reviews` (
@@ -151,20 +140,16 @@ CREATE TABLE `reviews` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `reviews`
+-- Déchargement des données de la table `reviews`
 --
 
 INSERT INTO `reviews` (`review_id`, `review_content`, `product_id`, `user_id`, `is_valid`) VALUES
-(11, 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur maxime quo corrupti illum in. Possimus animi aperiam enim consectetur aut. Ad numquam laboriosam sed tenetur porro expedita nulla nesciunt, officia, animi itaque recusandae quasi facere quae assumenda illo quidem laborum praesentium! Consequatur rem quasi vel cumque commodi non sed iure!', 13, 2, 1),
-(12, 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur maxime quo corrupti illum in. Possimus animi aperiam enim consectetur aut. Ad numquam laboriosam sed tenetur porro expedita nulla nesciunt, officia, animi itaque recusandae quasi facere quae assumenda illo quidem laborum praesentium! Consequatur rem quasi vel cumque commodi non sed iure!', 20, 2, 1),
-(13, 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur maxime quo corrupti illum in. Possimus animi aperiam enim consectetur aut. Ad numquam laboriosam sed tenetur porro expedita nulla nesciunt, officia, animi itaque recusandae quasi facere quae assumenda illo quidem laborum praesentium! Consequatur rem quasi vel cumque commodi non sed iure!', 22, 2, 1),
-(14, 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur maxime quo corrupti illum in. Possimus animi aperiam enim consectetur aut. Ad numquam laboriosam sed tenetur porro expedita nulla nesciunt, officia, animi itaque recusandae quasi facere quae assumenda illo quidem laborum praesentium! Consequatur rem quasi vel cumque commodi non sed iure!', 12, 2, 1),
-(15, 'What a perfect product ! Although expensive, I expect it to last longer than the Huawei I used to use.', 23, 3, 1);
+(16, 'Super masque ! Je ne regrette pas du tout mon achat.', 30, 2, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE `users` (
@@ -176,7 +161,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_role`) VALUES
@@ -187,93 +172,81 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`, `use
 (6, 'Visitor3', 'visitor3@gmail.com', 'visitor3', 1);
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `brands`
---
-ALTER TABLE `brands`
-  ADD PRIMARY KEY (`brand_id`);
-
---
--- Indexes for table `cart`
+-- Index pour la table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`);
 
 --
--- Indexes for table `categories`
+-- Index pour la table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indexes for table `images`
+-- Index pour la table `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`img_id`);
 
 --
--- Indexes for table `products`
+-- Index pour la table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indexes for table `reviews`
+-- Index pour la table `reviews`
 --
 ALTER TABLE `reviews`
   ADD PRIMARY KEY (`review_id`);
 
 --
--- Indexes for table `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `brands`
---
-ALTER TABLE `brands`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT pour la table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=217;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `images`
+-- AUTO_INCREMENT pour la table `images`
 --
 ALTER TABLE `images`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT for table `reviews`
+-- AUTO_INCREMENT pour la table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;

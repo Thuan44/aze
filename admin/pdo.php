@@ -1,8 +1,8 @@
 <?php
    define("PDO_HOST", "localhost");
-   define("PDO_DBBASE", "aze");
-   define("PDO_USER", "root");
-   define("PDO_PW", "root");
+   define("PDO_DBBASE", "nwdr0168_dev_tuan");
+   define("PDO_USER", "nwdr0168_tuan");
+   define("PDO_PW", "LT6NoRu9Z7");
  
  try{
    $connection = new PDO(

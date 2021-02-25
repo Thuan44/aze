@@ -62,7 +62,6 @@ const Home = {
                                 <div class="card-body">
                                     <div v-for="product in allCategories">
                                         <div class="custom-control custom-checkbox">
-                                            <span class="float-right badge badge-light round">7</span>
                                             <input type="checkbox" class="custom-control-input" :id="product.category_name" :value="product.category_name" v-model="selectedCategories">
                                             <label class="custom-control-label" :for="product.category_name">{{ product.category_name }}</label>
                                         </div> <!-- form-check.// -->
@@ -87,7 +86,7 @@ const Home = {
                                         <p class="card-text mb-3">{{ product.category_name }}</p>
                                         <h4 class="product-price">{{ product.product_price }}€</h4>
                                         <div class="d-flex justify-content-center">
-                                            <router-link :to="{name: 'ProductSheet', params: { id: product.product_id, product: product }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
+                                            <router-link :to="{name: 'ProductSheet', params: { id: product.product_id }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
                                             <!-- <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id)" class="btn btn-warning rounded-lg btn-card text-capitalize"><i class="fas fa-cart-plus"></i></button> -->
                                         </div>
                                     </div>
@@ -109,7 +108,7 @@ const Home = {
                                         <p class="card-text mb-3">{{ product.category_name }}</p>
                                         <h4 class="product-price">{{ product.product_price }}€</h4>
                                         <div class="d-flex justify-content-center">
-                                            <router-link :to="{name: 'ProductSheet', params: { id: product.product_id, product: product }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
+                                            <router-link :to="{name: 'ProductSheet', params: { id: product.product_id }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
                                             <!-- <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id)" class="btn btn-warning rounded-lg btn-card text-capitalize"><i class="fas fa-cart-plus"></i></button> -->
                                         </div>
                                     </div>
@@ -155,11 +154,11 @@ const Home = {
     },
     methods: {
         getImgUrl(picture) {
-            return "./assets/" + picture;
+            return "assets/" + picture;
         },
         addToCart(productId) {
             axios
-                .post('./admin/action.php', {
+                .post('admin/action.php', {
                     action: 'addsingleproducttocart',
                     productId: productId,
                 })
@@ -168,14 +167,14 @@ const Home = {
         // Get all products from database
         fetchAllProducts() {
             axios
-                .post('./admin/action.php', {
+                .post('admin/action.php', {
                     action: 'fetchallproducts'
                 }).then(response => (this.allProducts = response.data))
         },
         // Get all categories from database
         fetchAllCategories() {
             axios
-                .post('./admin/action.php', {
+                .post('admin/action.php', {
                     action: 'fetchallcategories'
                 }).then(response => (this.allCategories = response.data))
         },
@@ -296,27 +295,27 @@ const ProductSheet = {
                 <!-- TOAST -->
                 <div class="toast" id="toast" style="position: fixed; top: 150px; right: 50px;" data-delay="8000">
                     <div class="toast-header bg-primary">
-                        <strong class="mr-auto text-white"><i class="fas fa-smile-beam text-warning"></i> Thank you !</strong>
-                        <small class="text-white">Just now</small>
+                        <strong class="mr-auto text-white"><i class="fas fa-smile-beam text-warning"></i> Merci !</strong>
+                        <small class="text-white">À l'instant</small>
                         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                             <span aria-hidden="true" class="text-light">&times;</span>
                         </button>
                     </div>
                     <div class="toast-body">
-                        Your cart has been updated !
+                        Votre panier a été mis à jour !
                     </div>
                 </div> <!-- toast.// -->
 
                 <div class="toast" id="toast-not-logged" style="position: fixed; top: 150px; right: 50px;" data-delay="8000">
                     <div class="toast-header bg-primary">
                         <strong class="mr-auto text-white"><i class="fas fa-surprise text-warning"></i> Oops !</strong>
-                        <small class="text-white">Just now</small>
+                        <small class="text-white">À l'instant</small>
                         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                             <span aria-hidden="true" class="text-light">&times;</span>
                         </button>
                     </div>
                     <div class="toast-body">
-                        You need to login first to access your cart !
+                        Vous devez vous connecter avant d'accéder à votre panier !
                     </div>
                 </div> <!-- toast.// -->
 
@@ -331,7 +330,6 @@ const ProductSheet = {
             selectedCartId: '',
             selectedId: this.$route.params.id,
             product: '',
-            selectedProduct: {},
             relatedImg: {},
             reviewContent: '',
             reviewsByProduct: '',
@@ -526,8 +524,8 @@ const Cart = {
                             <input @change="updateQuantity(product, 'manualUpdate', product.cart_id, product.product_quantity)" type="number" min="1" step="1" v-model.number="product.product_quantity" class="input-quantity">
                             <button @click="updateQuantity(product, 'add', product.cart_id)" type="button" class="btn btn-outline-secondary btn-quantity"><i class="fas fa-plus"></i></button>
                         </td>
-                        <td class="align-middle">\${{ product.product_price }}</td>
-                        <td class="text-right align-middle bg-secondary" style="border-left: 1px dashed rgba(26, 26, 26, .4) !important">\${{ (product.product_price * product.product_quantity).toFixed(2) }}</td>
+                        <td class="align-middle">{{ product.product_price }}€</td>
+                        <td class="text-right align-middle bg-secondary" style="border-left: 1px dashed rgba(26, 26, 26, .4) !important">{{ (product.product_price * product.product_quantity).toFixed(2) }}€</td>
                     </tr>
                 </tbody>
 
@@ -565,18 +563,18 @@ const Cart = {
     methods: {
         checkUser() {
             axios
-                .post('./admin/action.php', {
+                .post('admin/action.php', {
                     action: 'checkuser'
                 })
                 .then(response => (this.currentUser = response.data))
         },
         getImgUrl(picture) {
-            return "./assets/" + picture;
+            return "assets/" + picture;
         },
         // Get all products in cart
         fetchAllProductsInCart() {
             axios
-                .post('./admin/action.php', {
+                .post('admin/action.php', {
                     action: 'fetchallproductsincart'
                 }).then(response => (this.allProductsInCart = response.data))
         },
@@ -594,7 +592,7 @@ const Cart = {
                         // V-model input changed
                     } else {
                         axios
-                            .post('./admin/action.php', {
+                            .post('admin/action.php', {
                                 action: 'updatequantity',
                                 cartId: cartId,
                                 productQuantity: productQuantity
@@ -604,7 +602,7 @@ const Cart = {
                     }
 
                     axios
-                        .post('./admin/action.php', {
+                        .post('admin/action.php', {
                             action: 'updatequantity',
                             cartId: cartId,
                             productQuantity: this.allProductsInCart[i].product_quantity
@@ -618,7 +616,7 @@ const Cart = {
         deleteProduct(product, cartId) {
             this.allProductsInCart.splice(this.allProductsInCart.indexOf(product), 1);
             axios
-                .post('./admin/action.php', {
+                .post('admin/action.php', {
                     action: 'deleteproduct',
                     cartId: cartId
                 }).then(response => (console.log(response)))
@@ -664,7 +662,7 @@ const vue = new Vue({
         // Get all categories
         fetchAllCategories() {
             axios
-                .post('./admin/action.php', {
+                .post('admin/action.php', {
                     action: 'fetchallcategories'
                 }).then(response => (this.allCategories = response.data))
         },

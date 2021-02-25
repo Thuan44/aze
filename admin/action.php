@@ -1,7 +1,23 @@
 <?php 
 session_start();
 
-$connect = new PDO("mysql:host=localhost;dbname=aze", "root", "root");
+define("PDO_HOST", "localhost");
+define("PDO_DBBASE", "nwdr0168_dev_tuan");
+define("PDO_USER", "nwdr0168_tuan");
+define("PDO_PW", "LT6NoRu9Z7");
+
+try{
+$connect = new PDO(
+"mysql:host=" . PDO_HOST . ";".
+"dbname=" . PDO_DBBASE, PDO_USER, PDO_PW,
+array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
+}
+catch (PDOException $e){
+print "Erreur !: " . $e->getMessage() . "<br/>";
+die();
+}
+
+// $connect = new PDO("mysql:host=localhost;dbname=nwdr0168_dev_tuan", "nwdr0168_tuan", "LT6NoRu9Z7");
 $received_data = json_decode(file_get_contents("php://input"));
 $data = array();
 
