@@ -1,23 +1,8 @@
 <?php 
 session_start();
+require_once 'pdo.php';
 
-define("PDO_HOST", "localhost");
-define("PDO_DBBASE", "nwdr0168_dev_tuan");
-define("PDO_USER", "nwdr0168_tuan");
-define("PDO_PW", "LT6NoRu9Z7");
-
-try{
-$connect = new PDO(
-"mysql:host=" . PDO_HOST . ";".
-"dbname=" . PDO_DBBASE, PDO_USER, PDO_PW,
-array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8") );
-}
-catch (PDOException $e){
-print "Erreur !: " . $e->getMessage() . "<br/>";
-die();
-}
-
-// $connect = new PDO("mysql:host=localhost;dbname=nwdr0168_dev_tuan", "nwdr0168_tuan", "LT6NoRu9Z7");
+// $connection = new PDO("mysql:host=localhost;dbname=nwdr0168_dev_tuan", "nwdr0168_tuan", "LT6NoRu9Z7");
 $received_data = json_decode(file_get_contents("php://input"));
 $data = array();
 
@@ -29,7 +14,7 @@ if($received_data->action == 'checkuser')
     global $userId;
 
     $query = "SELECT * FROM users WHERE user_id = $userId";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute();
     while($row = $result->fetch(PDO::FETCH_ASSOC))
     {
@@ -48,7 +33,7 @@ if($received_data->action == 'fetchallproducts')
             INNER JOIN categories ON products.category_id = categories.category_id
             INNER JOIN images ON products.product_id = images.product_id
             ORDER BY product_name ASC";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute();
     while($row = $result->fetch(PDO::FETCH_ASSOC))
     {
@@ -61,7 +46,7 @@ if($received_data->action == 'fetchallproducts')
 if($received_data->action == 'fetchallcategories')
 {
     $query = "SELECT * FROM categories";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute();
     while($row = $result->fetch(PDO::FETCH_ASSOC))
     {
@@ -80,7 +65,7 @@ if($received_data->action == 'fetchselectedproduct')
 
     $query = "SELECT * FROM products
             WHERE product_id = ?";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute([$received_data->productId]);
     while($row = $result->fetch(PDO::FETCH_ASSOC))
     {
@@ -93,7 +78,7 @@ if($received_data->action == 'fetchselectedproduct')
 if($received_data->action == 'fetchrelatedimg')
 {
     $query = "SELECT * FROM images WHERE product_id = ?";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute([$received_data->productId]);
     while($row = $result->fetch(PDO::FETCH_ASSOC))
     {
@@ -110,7 +95,7 @@ if($received_data->action == 'addreview')
     global $userId;
 
     $query = "INSERT INTO reviews (product_id, user_id, review_content) VALUES (?, $userId, ?)";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute([$received_data->productId, $received_data->reviewContent]);
 
     $output = array(
@@ -126,7 +111,7 @@ if($received_data->action == 'fetchallreviews')
     $query = "SELECT * FROM reviews
             INNER JOIN users ON reviews.user_id = users.user_id
             WHERE product_id = ? AND is_valid = 1";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute([$received_data->productId]);
     while($row = $result->fetch(PDO::FETCH_ASSOC))
     {
@@ -144,7 +129,7 @@ if($received_data->action == 'selectcartid')
     global $userId;
 
     $query = "SELECT * FROM cart WHERE product_id = ? AND user_id = $userId";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute([$received_data->productId]);
     while($row = $result->fetch(PDO::FETCH_ASSOC))
     {
@@ -159,7 +144,7 @@ if($received_data->action == 'addsingleproducttocart')
     global $userId;
 
     $query = "INSERT INTO cart (product_id, user_id, product_quantity) VALUES (?, $userId, 1)";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute([$received_data->productId]);
 }
 
@@ -171,7 +156,7 @@ if($received_data->action == 'incrementproductquantity')
     $query = "UPDATE cart
             SET product_quantity = product_quantity + 1
             WHERE product_id = ? AND user_id = $userId";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute([$received_data->productId]);
 
     $output = array(
@@ -194,7 +179,7 @@ if($received_data->action == 'fetchallproductsincart')
             INNER JOIN products ON cart.product_id = products.product_id
             INNER JOIN images ON cart.product_id = images.product_id
             WHERE cart.user_id = $userId";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute();
     while($row = $result->fetch(PDO::FETCH_ASSOC))
     {
@@ -209,7 +194,7 @@ if($received_data->action == 'updatequantity')
     $query = "UPDATE cart
             SET product_quantity = ?
             WHERE cart_id = ?";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute([$received_data->productQuantity, $received_data->cartId]);
 }
 
@@ -217,7 +202,7 @@ if($received_data->action == 'updatequantity')
 if($received_data->action == 'deleteproduct')
 {
     $query = "DELETE FROM cart WHERE cart_id = ?";
-    $result = $connect->prepare($query);
+    $result = $connection->prepare($query);
     $result->execute([$received_data->cartId]);
 }
 
