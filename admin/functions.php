@@ -42,6 +42,8 @@ function verifyInput($var) {
     return $var;
 }
 
+
+
 // Create account
 function signUp($userName, $userEmail, $userPassword) {
     global $connection;
