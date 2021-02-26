@@ -56,27 +56,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
                         <!-- Name -->
                         <div class="col-md-12 mb-3">
                             <label for="name">Votre nom*</label>
-                            <input type="text" id="name" name="name" class="form-control" value="">
+                            <input type="text" id="name" name="name" class="form-control" value="" aria-label="rgpd" title="Name"  aria-required="true">
                             <p class="comments text-danger"><?php echo $nameError; ?></p>
                         </div>
 
                         <!-- Email -->
                         <div class="col-md-12 mb-3">
                             <label for="email">Email*</label>
-                            <input type="text" id="email" name="email" class="form-control" value="">
+                            <input type="text" id="email" name="email" class="form-control" value="" aria-label="email" title="Email">
                             <p class="comments text-danger"><?php echo $emailError; ?></p>
                         </div>
 
                         <!-- Password-->
                         <div class="col-md-12 mb-3">
                             <label for="password">Choisissez un mot de passe*</label>
-                            <input type="password" id="password" name="password" class="form-control" value="">
+                            <input type="password" id="password" name="password" class="form-control" value="" aria-label="password" title="Password">
                             <p class="comments"><?php echo $passwordError; ?></p>
                         </div>
 
                         <!-- Required info -->
                         <div class="col-md-12 mb-3">
                             <p class="font-italic">*Ces champs sont requis</p>
+                        </div>
+
+                        <!-- RGPD -->
+                        <div class="col-md-12 mb-3 d-flex align-items-start">
+                            <input type="checkbox" id="rgpd" class="mr-2" required aria-label="rgpd" title="RGPD">
+                            <small><label for="rgpd">J'ai lu la <a href="privacyPolicy.php">charte de confidentialité</a> et en accepte les termes</label></small>
                         </div>
 
                         <!-- Submit -->

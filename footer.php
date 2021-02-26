@@ -3,10 +3,10 @@
     <div class="container-fluid d-flex justify-content-between align-items-center pt-4 footer-container">
         <div class="flags d-flex">
             <div class="flag-img mr-2">
-                <img class="w-100" src="./assets/img/france.png">
+                <img class="w-100" src="./assets/img/france.png" alt="drapeau france">
             </div>
             <div class="flag-img">
-                <img class="w-100" src="./assets/img/uk.png">
+                <img class="w-100" src="./assets/img/uk.png" alt="drapeau uk">
             </div>
         </div>
 
@@ -25,7 +25,7 @@
 
 <!-- Cookie banner -->
 <script type="text/javascript" id="cookieinfo"
-	src="//cookieinfoscript.com/js/cookieinfo.min.js" data-message="Ce site utilise des cookies pour améliorer votre expérience utilisateur. En continuant la navigation, vous acceptez que nous les utilisions à des fins d'optimisation." data-linkmsg="Plus d'informations" data-divlinkbg="#ED9D2B" data-divlink="#fff">
+	src="//cookieinfoscript.com/js/cookieinfo.min.js" data-message="Ce site utilise des cookies pour améliorer votre expérience utilisateur. En continuant la navigation, vous acceptez que nous les utilisions à des fins d'optimisation." data-linkmsg="Plus d'informations" data-divlinkbg="#ED9D2B" data-divlink="#fff@">
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

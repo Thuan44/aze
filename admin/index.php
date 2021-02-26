@@ -20,7 +20,7 @@
             <a href="update_product.php">
                 <div class="card mb-3 rounded shadow-sm">
                     <h4 class="card-header text-center">Modifier un produit</h4>
-                    <img src="../assets/img/update_product.png" alt="add_product" class="img-add">
+                    <img src="../assets/img/update_product.png" alt="update_product" class="img-add">
                 </div>
             </a>
         </div>
@@ -29,7 +29,7 @@
             <a href="reviews.php">
                 <div class="card mb-3 rounded shadow-sm">
                     <h4 class="card-header text-center text-white bg-dark">Gérer les avis</h4>
-                    <img src="../assets/img/reviews.png" alt="add_product" class="img-add">
+                    <img src="../assets/img/reviews.png" alt="product_reviews" class="img-add">
                 </div>
             </a>
         </div>

@@ -43,7 +43,7 @@ $listProducts = listProducts($categoryId, $brandId);
             <div class="row">
 
                 <!-- Categories -->
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-6">
                     <div class="form-group">
                         <select class="custom-select" name="category_id" onChange="submit()" required>
                             <option selected="">1. Choisissez une catégorie</option>
@@ -57,23 +57,8 @@ $listProducts = listProducts($categoryId, $brandId);
                     </div>
                 </div>
 
-                <!-- Brands -->
-                <div class="col-xs-12 col-md-4">
-                    <div class="form-group">
-                        <select class="custom-select" name="brand_id" onChange="submit()" required>
-                            <option selected="">2. Choisissez une marque</option>
-                            <?php foreach ($listBrands as $brand): ?>
-                                <?php var_dump($brand)?>
-                                <option value="<?php echo $brand['brand_id'] ?>" <?php if ($brand['brand_id'] === @$_POST['brand_id']) {
-                                    echo "selected"; }?>><?=$brand['brand_name']?>
-                                </option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
-                </div>
-
                 <!-- Products -->
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-6">
                     <div class="form-group">
                         <select class="custom-select" name="product_id" onChange="submit()" required>
                             <option>2. Choisissez un produit</option>

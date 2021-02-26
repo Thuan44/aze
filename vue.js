@@ -14,13 +14,13 @@ const Home = {
                 </ol> 
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./assets/img/carousel_img_1_resized.jpg" class="d-block w-100" alt="...">
+                        <img src="./assets/img/carousel_img_1_compressed.jpg" class="d-block w-100" alt="image carousel 1">
                     </div>
                     <div class="carousel-item">
-                        <img src="./assets/img/carousel_img_2_resized.jpg" class="d-block w-100" alt="...">
+                        <img src="./assets/img/carousel_img_2_compressed.jpg" class="d-block w-100" alt="image carousel 2">
                     </div>
                     <div class="carousel-item">
-                        <img src="./assets/img/carousel_img_3_resized.jpg" class="d-block w-100" alt="...">
+                        <img src="./assets/img/carousel_img_3_compressed.jpg" class="d-block w-100" alt="image carousel 3">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -33,7 +33,7 @@ const Home = {
                 </a>
             </div>
 
-            <h1 class="mt-5 text-center" style="font-family: 'Fjalla One', sans-serif;">Tous nos produits</h1><p class="text-center" style="color: #777">Le street wear nantais mixte, éthique et Made in France</p>
+            <h1 class="mt-5 text-center" style="font-family: 'Fjalla One', sans-serif;">Tous nos produits</h1><p class="text-center">Le street wear nantais mixte, éthique et Made in France</p>
             <div class="divider"></div>
 
             <div class="centering-container">
@@ -48,6 +48,7 @@ const Home = {
                             </header>
                             <div class="filter-content">
                                 <div class="card-body">
+                                            <label for="searchbar" class="visuallyhidden"></label>
                                             <input type="search" class="form-control border w-100" id="searchbar" placeholder="Rechercher un produit" v-model="searchTerm">
                                 </div> <!-- card-body.// -->
                             </div>
@@ -78,7 +79,7 @@ const Home = {
                         <div v-for="product in filteredProducts" v-bind:key="product.product_id" class="mt-4">
                             <div class="col-4">
                                 <div class="card product-card shadow-sm p-3" style="width: 20rem;">
-                                    <img class="card-img-top" :src="getImgUrl(product.img_name)" alt="Card image cap">
+                                    <img class="card-img-top" :src="getImgUrl(product.img_name)" alt="product.img_name">
                                     <p v-if="product.product_stock <= 10 && product.product_stock > 0" class="card-text stock lead text-center"><i class="fas fa-exclamation-circle"></i> STOCK LIMITÉ !</p>
                                     <p v-if="product.product_stock == 0" class="card-text stock lead text-center text-danger"><i class="fas fa-sad-tear"></i> STOCK ÉPUISÉ !</p>
                                     <div class="card-body d-flex flex-column -justify-content-center">
@@ -100,7 +101,7 @@ const Home = {
                         <div v-for="product in allProducts" v-bind:key="product.product_id" class="mt-4">
                             <div class="col-4">
                                 <div class="card product-card shadow-sm p-3" style="width: 20rem;">
-                                    <img class="card-img-top" :src="getImgUrl(product.img_name)" alt="Card image cap">
+                                    <img class="card-img-top" :src="getImgUrl(product.img_name)" alt="product.img_name">
                                     <p v-if="product.product_stock <= 10 && product.product_stock > 0" class="card-text stock lead text-center"><i class="fas fa-exclamation-circle"></i> STOCK LIMITÉ !</p>
                                     <p v-if="product.product_stock == 0" class="card-text stock lead text-center text-danger"><i class="fas fa-sad-tear"></i> STOCK ÉPUISÉ !</p>
                                     <div class="card-body d-flex flex-column -justify-content-center">
@@ -202,19 +203,19 @@ const ProductSheet = {
                             <img :src="getExtraImgUrl(relatedImg.extra_img1)" alt="extra-product-image">
                         </div>
                         <div class="product-extra-img mb-2 border">
-                            <img :src="getImgUrl(relatedImg.img_name)" alt="product-image">
+                            <img :src="getImgUrl(relatedImg.img_name)" alt="extra-product-image2">
                         </div>
                         <div class="product-extra-img mb-2 border">
-                            <img :src="getImgUrl(relatedImg.img_name)" alt="product-image">
+                            <img :src="getImgUrl(relatedImg.img_name)" alt="extra-product-image3">
                         </div>
                         <div class="product-extra-img mb-2 border">
-                            <img :src="getImgUrl(relatedImg.img_name)" alt="product-image">
+                            <img :src="getImgUrl(relatedImg.img_name)" alt="extra-product-image4">
                         </div>
                     </div> <!-- col.// -->
 
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 pr-4 align-self-center">
                         <div class="product-img">
-                            <img :src="getImgUrl(relatedImg.img_name)" alt="product-image">
+                            <img :src="getImgUrl(relatedImg.img_name)" alt="image principale">
                             <p class="font-italic text-center" style="color: rgba(50, 50, 50, .4)">Passez sur les miniatures les agrandir</p>
                         </div>
                     </div> <!-- col.// -->
@@ -270,7 +271,7 @@ const ProductSheet = {
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-2 d-flex flex-column justify-content-around align-items-center">
-                                <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid w-75"/>
+                                <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid w-75" alt="avatar utilisateur" />
                                 <p class="text-center"><small class="text-secondary">15 Minutes Ago</small></p>
                             </div>
                             <div class="col-md-10">
@@ -517,7 +518,7 @@ const Cart = {
                 <tbody>
                     <tr v-for="product in allProductsInCart" v-bind:key="product.cart_id" class="table-light text-center">
                         <td class="align-middle" scope="row"><button @click="deleteProduct(product, product.cart_id)" type="submit" class="btn text-danger btn-cart-delete rounded"><i class="fas fa-trash-alt"></i></button></td>
-                        <td class="align-middle"><div class="cart-img"><img :src="getImgUrl(product.img_name)" /></div></td>
+                        <td class="align-middle"><div class="cart-img"><img :src="getImgUrl(product.img_name)" alt="product.img_name" /></div></td>
                         <td class="align-middle text-left"><router-link :to="{name: 'ProductSheet', params: { id: product.product_id, product: product }}">{{ product.product_name }}</router-link></td>
                         <td class="align-middle">
                             <button @click="updateQuantity(product, 'substract', product.cart_id)" type="button" class="btn btn-outline-secondary btn-quantity"><i class="fas fa-minus"></i></button>
