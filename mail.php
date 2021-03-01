@@ -2,7 +2,7 @@
 
 $name    = 'Thuan';
 $to      = 'nobody@example.com';
-$subject = 'the subject';
+$subject = 'Création de compte AZE';
 $message = file_get_contents("newsletter.php?name=$name");
 $headers = array(
     'From' => 'webmaster@example.com',
