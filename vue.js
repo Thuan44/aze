@@ -439,7 +439,7 @@ const Contact = {
             <div class="divider"></div>
 
             <div class="form-container shadow-sm rounded bg-white py-4 px-5" style="max-width: 600px; margin: 0 auto">
-                <form>
+                <form action="#" id="signup-form" method="POST" role="form">
                     <fieldset>
                         <legend class="text-center text-primary form-envelope m-0"><i class="fas fa-envelope"></i></legend>
                         <fieldset class="form-group d-flex justify-content-center my-3">

@@ -1,29 +1,73 @@
 <?php
-include_once './admin/pdo.php';
-include_once './admin/functions.php';
+include_once 'admin/pdo.php';
+include_once 'admin/functions.php';
 ?>
 
 <?php
 $nameError = $emailError = $passwordError = "";
 $isSuccess = false;
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POST
+
+    // Sign up
     $name = verifyInput($_POST['name']);
     $email = verifyInput($_POST['email']);
     $password = verifyInput($_POST['password']);
     $isSuccess =  true;
 
     if (empty($name)) {
-        $nameError = "Please enter your name";
+        $nameError = "J'ai besoin de connaître votre nom !";
         $isSuccess = false;
     }
     if (!isEmail($email)) { // If $email is not valid
-        $emailError = "The email address is invalid";
+        $emailError = "Êtes-vous sûr de l'email ?";
         $isSuccess = false;
     }
+    if ($isSuccess) {
+        signUp($name, $email, $password);
+    }
 
-    signUp($name, $email, $password);
+    // Mailing
+    if ($isSuccess) {
+        $fromEmail = 'aze@creation.com';
+        $toEmail = $email;
+        $subjectName = 'Création de compte AZE';
+
+        $to = $toEmail;
+        $subject = $subjectName;
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $headers .= 'From: ' . $fromEmail . '<' . $fromEmail . '>' . "\r\n" . 'Reply-To: ' . $fromEmail . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+        $message =
+            '<!doctype html>
+            <html lang="en">
+
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                    <title>Document</title>
+                </head>
+
+                <body>
+                    <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">' . "Votre message" . '</span>
+                    <div class="container">
+                            ' . "Félicitations ! Nous vous confirmons que vous compte AZE a bien été créé. Vous pouvez désormais effectuer vos achats en cliquant sur le lien ci-dessous" . '<br/>
+                                <a href="https://tuan.webarinfonantes.com/login.php">Lien vers la boutique</a> <br/><br/>
+                                À très vite !<br/><br/>
+                            ' . "Topaze" . '
+                    </div>
+                </body>
+
+            </html>';
+        $result = @mail($to, $subject, $message, $headers);
+
+        echo '<script>alert("Compté crée avec succès ! Vous pouvez désormais vous connecter avec vos identifiants.")</script>';
+        echo '<script>window.location.href="login.php";</script>';
+    }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -50,13 +94,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
 
         <div class="row justify-content-center border rounded p-5 mb-5">
             <div class="col-lg-10 col-lg-offset-1">
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="signup-form" method="POST" role="form">
+                <form action="#" id="signup-form" method="POST" role="form">
 
                     <div class="row">
                         <!-- Name -->
                         <div class="col-md-12 mb-3">
                             <label for="name">Votre nom*</label>
-                            <input type="text" id="name" name="name" class="form-control" value="" aria-label="rgpd" title="Name"  aria-required="true">
+                            <input type="text" id="name" name="name" class="form-control" value="" aria-label="rgpd" title="Name" aria-required="true">
                             <p class="comments text-danger"><?php echo $nameError; ?></p>
                         </div>
 
@@ -87,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
 
                         <!-- Submit -->
                         <div class="col-md-12">
-                            <input type="submit" class="btn btn-primary p-2 w-100" value="Créer compte">
+                            <input type="submit" class="btn btn-primary p-2 w-100" value="Créer compte" name="create_account">
                         </div>
 
 
