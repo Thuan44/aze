@@ -40,15 +40,11 @@ p {
 }
 
 .divider {
-  height: 3px;
-  width: 150px;
+  height: 6px;
+  width: 30px;
   margin: 10px auto 30px;
-  background: #FDFC47;
+  background: rgba(73, 187, 112, 0.7);
   /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(rgba(73, 187, 112, 0.7)), to(#FFDC00));
-  background: linear-gradient(to right, rgba(73, 187, 112, 0.7), #FFDC00);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .small-divider {
@@ -382,6 +378,15 @@ input.form-control {
 
 .toggle-btn:hover {
   background-color: #F2F2F2 !important;
+}
+
+.card-payment {
+  min-width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 footer {

@@ -32,13 +32,12 @@ include_once 'admin/functions.php';
                 </div>
             </router-link>
 
-            <!-- <router-link class="navbar-brand font-weight-bold text-secondary" style="border: 2px solid #1A1A1A; border-radius: 50px; padding: 5px 10px" to="/">AZE CREATION</router-link> -->
-            <?php if (@($_SESSION['user_role']) == 5 ) { ?>
-                <a href="admin/index.php" class="btn btn-warning btn-sm mr-4">Go to Back-Office</a>
-            <?php } ?>
             <div class="left-stick"></div>
             <p class="slogan">Le street wear nantais</p>
             <div class="right-stick"></div>
+            <?php if (@($_SESSION['user_role']) == 5 ) { ?>
+                <a href="admin/index.php" class="btn btn-warning btn-sm ml-4">Back-Office</a>
+            <?php } ?>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

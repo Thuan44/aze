@@ -49,7 +49,7 @@ const Home = {
                             </header>
                             <div class="filter-content">
                                 <div class="card-body">
-                                            <label for="searchbar" class="visuallyhidden" class="position-absolute"></label>
+                                            <label for="searchbar" class="visuallyhidden position-absolute"></label>
                                             <input type="search" class="form-control border w-100" id="searchbar" placeholder="Rechercher un produit" v-model="searchTerm">
                                 </div> <!-- card-body.// -->
                             </div>
@@ -244,7 +244,7 @@ const ProductSheet = {
                             <div>
                                 <div class="product-divider"></div>
                                 <div class="product-validation float-right">
-                                    <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id); showToast()" type="submit" class="btn btn-outline-success btn-sm rounded shadow-sm" id="add-to-cart">Ajouter au panier</button></td>
+                                    <button :disabled="product.product_stock == 0" @click="addToCart(); showToast()" type="submit" class="btn btn-outline-success btn-sm rounded shadow-sm" id="add-to-cart">Ajouter au panier</button></td>
                                 </div>
                             </div>
                         </div>
@@ -360,14 +360,19 @@ const ProductSheet = {
                 })
                 .then(response => (this.selectedCartId = response.data))
         },
-        addToCart(productId) {
+        addToCart() {
+            // Update selectedCartId
+            this.selectCartId();
+
             if (this.selectedCartId == '') {
+                console.log('clicked')
                 // Add article to cart
                 axios
                     .post('./admin/action.php', {
                         action: 'addsingleproducttocart',
-                        productId: productId
+                        productId: this.selectedId
                     })
+                this.selectCartId();
             } else {
                 // Increment product quantity
                 axios
@@ -533,14 +538,16 @@ const Cart = {
 
             </table>
 
-            <form action="#">
+            <form action="paypalForm.php">
                 <div class="total-group d-flex flex-column">
                     <div class="d-flex align-items-center total-to-pay form-group mb-2 shadow-sm">
                         <label for="total-to-pay" class="mb-0 total-label bg-primary text-white form-control text-uppercase text-center">Total à payer</label>
                         <input id="total-to-pay" class="text-right total-input form-control bg-light" :value="totalToPay" />
                     </div>
                     <div class="btn-checkout shadow-sm">
-                        <a href="#" class="btn btn-success form-control">Procéder au paiement<span class="pl-1"><i class="fas fa-credit-card"></i></span></a>
+                        <button type="submit" class="btn btn-success form-control" name="payment" @click="confirmTotalToPay">
+                            <span class="pl-1">Procéder au paiement <i class="fas fa-credit-card"></i></span>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -621,6 +628,15 @@ const Cart = {
                 .post('admin/action.php', {
                     action: 'deleteproduct',
                     cartId: cartId
+                }).then(response => (console.log(response)))
+        },
+        confirmTotalToPay() {
+            console.log('clicked');
+            console.log(this.totalToPay);
+            axios
+                .post('admin/action.php', {
+                    action: 'confirm-total-to-pay',
+                    totalToPay: this.totalToPay,
                 }).then(response => (console.log(response)))
         }
     },
