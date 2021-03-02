@@ -33,7 +33,7 @@ const Home = {
                 </a>
             </div>
             
-            <h1 class="mt-5 text-center" style="font-family: 'Fjalla One', sans-serif;">Tous nos produits</h1>
+            <h1 class="mt-5 text-center tous-nos-produits" style="font-family: 'Fjalla One', sans-serif;">Tous nos produits</h1>
             <p class="text-center">Le street wear nantais mixte, éthique et Made in France</p>
             <div class="divider"></div>
 
@@ -261,7 +261,7 @@ const ProductSheet = {
                     <div class="card-body">
                         <form action="" method="POST" v-on:submit.prevent="addreview">
                             <div class="form-group">
-                                <textarea class="form-control border" name="comment_content" rows="3" v-model="reviewContent"></textarea>
+                                <textarea class="form-control border" name="comment_content" rows="3" v-model="reviewContent" required></textarea>
                             </div>
                             <button @click="addReview(product.product_id)" type="submit" name="add-comment" class="btn btn-primary btn-sm rounded float-right">Publier</button>
                         </form>
@@ -365,7 +365,6 @@ const ProductSheet = {
             this.selectCartId();
 
             if (this.selectedCartId == '') {
-                console.log('clicked')
                 // Add article to cart
                 axios
                     .post('./admin/action.php', {
@@ -383,13 +382,15 @@ const ProductSheet = {
             }
         },
         addReview(productId) {
-            axios
-                .post('./admin/action.php', {
-                    action: 'addreview',
-                    productId: productId,
-                    reviewContent: this.reviewContent
-                })
-                .then(response => alert(response.data.message))
+            if (this.reviewContent !== '') {
+                axios
+                    .post('./admin/action.php', {
+                        action: 'addreview',
+                        productId: productId,
+                        reviewContent: this.reviewContent
+                    })
+                    .then(response => alert(response.data.message))
+            }
             this.reviewContent = ''
         },
         fetchAllReviews() {
@@ -441,7 +442,7 @@ const Contact = {
 
         <div class="container page-container">
 
-            <h1 class="mt-5 text-center page-title" style="font-family: 'Fjalla One', sans-serif;">Contact</h1><p class="text-center" style="color: #777">REstons en contact !</p>
+            <h1 class="mt-5 text-center page-title" style="font-family: 'Fjalla One', sans-serif;">Contact</h1><p class="text-center" style="color: #777">Restons en contact !</p>
             <div class="divider"></div>
 
             <div class="form-container shadow-sm rounded bg-white py-4 px-5" style="max-width: 600px; margin: 0 auto">
@@ -538,14 +539,14 @@ const Cart = {
 
             </table>
 
-            <form action="paypalForm.php">
+            <form action="#">
                 <div class="total-group d-flex flex-column">
                     <div class="d-flex align-items-center total-to-pay form-group mb-2 shadow-sm">
                         <label for="total-to-pay" class="mb-0 total-label bg-primary text-white form-control text-uppercase text-center">Total à payer</label>
                         <input id="total-to-pay" class="text-right total-input form-control bg-light" :value="totalToPay" />
                     </div>
                     <div class="btn-checkout shadow-sm">
-                        <button type="submit" class="btn btn-success form-control" name="payment" @click="confirmTotalToPay">
+                        <button type="submit" class="btn btn-success form-control" @click="confirmTotalToPay()">
                             <span class="pl-1">Procéder au paiement <i class="fas fa-credit-card"></i></span>
                         </button>
                     </div>
@@ -631,13 +632,19 @@ const Cart = {
                 }).then(response => (console.log(response)))
         },
         confirmTotalToPay() {
-            console.log('clicked');
+            console.log('ok');
             console.log(this.totalToPay);
             axios
                 .post('admin/action.php', {
                     action: 'confirm-total-to-pay',
-                    totalToPay: this.totalToPay,
-                }).then(response => (console.log(response)))
+                    totalToPay: this.totalToPay
+                })
+                .then(response => {
+                    console.log(response)
+                })
+                .catch((error) => {
+                    console.warn('Not good man :(');
+                })
         }
     },
     computed: {

@@ -60,6 +60,8 @@ p {
 }
 
 .navbar {
+  padding-top: 20px;
+  padding-bottom: 0px;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -68,8 +70,12 @@ p {
   color: rgba(73, 187, 112, 0.7) !important;
 }
 
+.branding:hover {
+  text-decoration: none;
+}
+
 .slogan {
-  text-shadow: 0px 1px 2pxrgba 0, 0, 0, 0.05;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05) !important;
 }
 
 .left-stick {
@@ -112,7 +118,7 @@ p {
 .second-nav {
   padding-top: 15px;
   padding-left: 55px;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .second-nav a {
@@ -121,9 +127,7 @@ p {
 }
 
 .second-nav a:hover {
-  color: #F0AD4E !important;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  color: #7ECE9A !important;
 }
 
 .greeting {
@@ -417,10 +421,18 @@ footer {
 }
 
 @media screen and (max-width: 992px) {
-  .search-bar {
-    position: absolute;
-    left: 230px;
-    top: 17px;
+  .container-fluid {
+    padding: 0 50px;
+  }
+  .navbar {
+    padding-bottom: 20px;
+  }
+  .logo {
+    display: none;
+  }
+  .branding {
+    width: 100%;
+    margin: 0 auto;
   }
   .navbar-nav {
     display: -webkit-box;
@@ -438,8 +450,13 @@ footer {
   .second-nav {
     display: none !important;
   }
+  .navbar-toggler {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
   #carouselExampleIndicators {
-    margin-top: 85px;
+    margin-top: 150px;
   }
   .page-container {
     padding-top: 90px;
@@ -486,6 +503,12 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  .carousel {
+    display: none;
+  }
+  .tous-nos-produits {
+    margin-top: 150px !important;
+  }
   .cart-table, .total-group {
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
@@ -506,18 +529,6 @@ footer {
   }
   .flags, .copyright {
     margin-bottom: 10px;
-  }
-}
-
-@media screen and (max-width: 710px) {
-  .search-input {
-    width: 150px !important;
-  }
-}
-
-@media screen and (max-width: 580px) {
-  .search-bar {
-    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

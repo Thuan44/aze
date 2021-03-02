@@ -32,12 +32,16 @@ include_once 'admin/functions.php';
                 </div>
             </router-link>
 
-            <div class="left-stick"></div>
-            <p class="slogan">Le street wear nantais</p>
-            <div class="right-stick"></div>
+            <router-link to="/" class="branding d-flex justify-content-center align-items-center">
+                <div class="left-stick"></div>
+                <p class="slogan">Le street wear nantais</p>
+                <div class="right-stick"></div>
+            </router-link>
+
             <?php if (@($_SESSION['user_role']) == 5 ) { ?>
                 <a href="admin/index.php" class="btn btn-warning btn-sm ml-4">Back-Office</a>
             <?php } ?>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
