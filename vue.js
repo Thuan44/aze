@@ -32,8 +32,9 @@ const Home = {
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-
-            <h1 class="mt-5 text-center" style="font-family: 'Fjalla One', sans-serif;">Tous nos produits</h1><p class="text-center">Le street wear nantais mixte, éthique et Made in France</p>
+            
+            <h1 class="mt-5 text-center" style="font-family: 'Fjalla One', sans-serif;">Tous nos produits</h1>
+            <p class="text-center">Le street wear nantais mixte, éthique et Made in France</p>
             <div class="divider"></div>
 
             <div class="centering-container">
@@ -48,7 +49,7 @@ const Home = {
                             </header>
                             <div class="filter-content">
                                 <div class="card-body">
-                                            <label for="searchbar" class="visuallyhidden"></label>
+                                            <label for="searchbar" class="visuallyhidden" class="position-absolute"></label>
                                             <input type="search" class="form-control border w-100" id="searchbar" placeholder="Rechercher un produit" v-model="searchTerm">
                                 </div> <!-- card-body.// -->
                             </div>

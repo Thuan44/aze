@@ -28,15 +28,17 @@ include_once 'admin/functions.php';
 
             <router-link to="/">
                 <div class="logo">
-                    <img src="assets/img/logo_transparent.png" alt="logo">
+                    <img src="assets/img/logo_transparent.png" alt="logo" class="logo-img">
                 </div>
             </router-link>
 
-            <router-link class="navbar-brand font-weight-bold text-secondary" style="border: 2px solid #1A1A1A; border-radius: 50px; padding: 5px 10px" to="/">AZE CREATION</router-link>
+            <!-- <router-link class="navbar-brand font-weight-bold text-secondary" style="border: 2px solid #1A1A1A; border-radius: 50px; padding: 5px 10px" to="/">AZE CREATION</router-link> -->
             <?php if (@($_SESSION['user_role']) == 5 ) { ?>
                 <a href="admin/index.php" class="btn btn-warning btn-sm mr-4">Go to Back-Office</a>
             <?php } ?>
-            <p>Le street wear nantais mixte, éthique et Made in France</p>
+            <div class="left-stick"></div>
+            <p class="slogan">Le street wear nantais</p>
+            <div class="right-stick"></div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,19 +46,19 @@ include_once 'admin/functions.php';
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <router-link class="nav-link text-secondary" to="/contact">Contact <span class="text-warning"><i class="fas fa-comment"></i></span></router-link>
+                        <router-link class="nav-link text-secondary" to="/contact">Contact <span class="nav-icon"><i class="fas fa-comment"></i></span></router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link text-secondary" to="/cart">Panier <span class="text-warning"><i class="fas fa-shopping-cart"></i></span></router-link>
+                        <router-link class="nav-link text-secondary" to="/cart">Panier <span class="nav-icon"><i class="fas fa-shopping-cart"></i></span></router-link>
                     </li>
                     <!-- Sign out button -->
                     <?php if (isset($_SESSION['user_name'])) { ?>
                         <li class="nav-item mr-0">
-                            <a href="logout.php" class="nav-link text-secondary">Déconnexion <span class="text-warning"><i class="fas fa-sign-out-alt"></i></span></a>
+                            <a href="logout.php" class="nav-link text-secondary">Déconnexion <span class="nav-icon"><i class="fas fa-sign-out-alt"></i></span></a>
                         </li>
                     <?php } else { ?>
                         <li class="nav-item">
-                            <a href="login.php" class="nav-link text-secondary">Connexion <span class="text-warning"><i class="fas fa-sign-in-alt"></i></span></a>
+                            <a href="login.php" class="nav-link text-secondary">Connexion <span class="nav-icon"><i class="fas fa-sign-in-alt"></i></span></a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -73,7 +75,7 @@ include_once 'admin/functions.php';
             </ul>
             <!-- Greeting  -->
             <?php if (isset($_SESSION['user_name'])) { ?>
-                <small class="text-secondary greeting-guest text-capitalize">Bonjour, <?php echo $_SESSION['user_name'] ?>.</small>
+                <small class="greeting-guest text-capitalize">Bonjour, <?php echo $_SESSION['user_name'] ?>.</small>
             <?php } ?>
         </div>
 
