@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
 
     <div class="container shadow-sm rounded" style="max-width: 600px;">
 
-        <div class="row justify-content-center border rounded p-5 mb-5">
+        <div class="row justify-content-center border rounded p-5 mb-5 form-container">
             <div class="col-lg-10 col-lg-offset-1">
                 <form action="#" id="signup-form" method="POST" role="form">
 
@@ -100,21 +100,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
                         <!-- Name -->
                         <div class="col-md-12 mb-3">
                             <label for="name">Votre nom*</label>
-                            <input type="text" id="name" name="name" class="form-control" value="" aria-label="rgpd" title="Name" aria-required="true">
+                            <input type="text" id="name" name="name" class="form-control border" value="" aria-label="rgpd" title="Name" aria-required="true">
                             <p class="comments text-danger"><?php echo $nameError; ?></p>
                         </div>
 
                         <!-- Email -->
                         <div class="col-md-12 mb-3">
                             <label for="email">Email*</label>
-                            <input type="text" id="email" name="email" class="form-control" value="" aria-label="email" title="Email">
+                            <input type="text" id="email" name="email" class="form-control border" value="" aria-label="email" title="Email">
                             <p class="comments text-danger"><?php echo $emailError; ?></p>
                         </div>
 
                         <!-- Password-->
                         <div class="col-md-12 mb-3">
                             <label for="password">Choisissez un mot de passe*</label>
-                            <input type="password" id="password" name="password" class="form-control" value="" aria-label="password" title="Password">
+                            <input type="password" id="password" name="password" class="form-control border" value="" aria-label="password" title="Password">
                             <p class="comments"><?php echo $passwordError; ?></p>
                         </div>
 

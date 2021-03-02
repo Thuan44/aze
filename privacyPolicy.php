@@ -1,126 +1,253 @@
-<h1>Privacy Policy</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-A. Introduction
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZE</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
 
-La confidentialité des visiteurs de notre site web est très importante à nos yeux, et nous nous engageons à la protéger. Cette politique détaille ce que nous faisons de vos informations personnelles.
-Consentir à notre utilisation de cookies en accord avec cette politique lors de votre première visite de notre site web nous permet d’utiliser des cookies à chaque fois que vous consultez notre site.
+<body>
 
-B. Source
+    <div class="container">
 
-Ce document a été créé grâce à un modèle de SEQ Legal (seqlegal.com)
-et a été modifié par Website Planet (www.websiteplanet.com)
+        <section id="privacy-policy">
+            <div class="row">
+                <div class="large-12 columns">
 
-C. Collecte d’informations personnelles
+                    <h1 class="rounded border p-2 m-4 text-center text-white bg-primary text-uppercase">POLITIQUE DE CONFIDENTIALIT&Eacute; </h1>
 
-Les types d’informations personnelles suivants peuvent collectés, stockés et utilisés :
-Des informations à propos de votre ordinateur, y compris votre adresse IP, votre localisation géographique, le type et la version de votre navigateur, et votre système d’exploitation ;
-Des informations sur vos visites et votre utilisation de ce site web y compris la source référente, la durée de la visite, les pages vues, et les chemins de navigation de sites web ;
-Des informations comme votre adresse e-mail, que vous nous fournissez lors de votre inscription au site ;
-Des informations que vous saisissez quand vous créez un profil sur notre site web comme votre nom, votre photo de profil, votre genre, votre date de naissance, votre situation amoureuse, vos intérêts et vos loisirs, votre parcours scolaire et votre parcours professionnel ;
-Des informations comme votre nom et votre adresse e-mail, que vous saisissez pour souscrire à nos e-mails et/ou newsletters ;
-Des informations que vous saisissez quand vous utilisez les services de notre site web ;
-Des informations générées lors de l’utilisation de notre site, y compris quand, à quelle fréquence et sous quelles circonstances vous l’utilisez ;
-Des informations relatives aux achats que vous faites, aux services que vous utilisez ou aux transactions que vous effectuez sur notre site, qui incluent votre nom, adresse, numéro de téléphone, adresse e-mail et informations bancaires ;
-Des informations que vous publiez sur notre site web dans l’intention de les publier sur internet, et qui incluent votre identifiant, vos photos de profil et le contenu de vos publications ;
-Des informations contenues dans toutes les communications que vous nous envoyez par e-mail ou sur notre site web, y compris leurs contenus et leurs métadonnées ;
-Toute autre information personnelle que vous nous communiquez.
-Avant de nous divulguer des informations personnelles concernant une autre personne, vous devez obtenir le consentement de ladite personne en ce qui concerne la divulgation et le traitement de ces informations personnelles selon les termes de cette politique
+                    <p>
+                        Nous prenons tr&egrave;s au s&eacute;rieux la confidentialit&eacute; des donn&eacute;es de nos clients et nous voulons vous pr&eacute;senter dans ce document, comment les donn&eacute;es personnelles que nous collectons sur notre site internet www.onepiece.fr ou sein de nos magasins, sont prot&eacute;g&eacute;es, conserv&eacute;es et utilis&eacute;es pour communiquer avec vous.</p>
 
-D. Utilisation de vos informations personnelles
+                    <p class="inline-header">DANS QUEL CADRE NOUS COLLECTONS VOS DONN&Eacute;ES ?</p>
 
-Les informations personnelles qui nous sont fournies par le biais de notre site web seront utilisées dans les objectifs décrits dans cette politique ou dans les pages du site pertinentes. Nous pouvons utiliser vos informations personnelles pour:
-Administrer notre site web et notre entreprise ;
-Personnaliser notre site web pour vous ;
-Permettre votre utilisation des services proposés sur notre site web ;
-Vous envoyer les marchandises achetées sur notre site ;
-Vous fournir les services achetés sur notre site ;
-Vous envoyer des relevés, des factures et des rappels de paiement, et collecter vos paiements ;
-Vous envoyer des communications commerciales non relatives au marketing ;
-Vous envoyer des notifications par e-mail que vous avez expressément demandées ;
-Vous envoyer notre newsletter par mail, si vous l’avez demandé (vous pouvez nous informer à tout moment de votre volonté de ne plus recevoir notre newsletter) ;
-Vous envoyer des communications marketing relatives à notre entreprise ou à des entreprises tierces sélectionnées avec soin qui selon nous pourraient vous intéresser, sous forme de publication, ou si vous avez expressément donné votre accord, par e-mail ou technologie similaire (vous pouvez nous informer à tout moment de votre volonté de ne plus recevoir de communications marketing) ;
-Fournir des informations statistiques à propos de nos utilisateurs à des tierces parties (sans que ces tierces parties puissent identifier d’utilisateur individuel avec ces informations) ;
-Traiter les demandes et les réclamations relatives à votre site web effectuées par vous ou vous concernant ;
-Maintenir la sécurité de notre site web et empêcher la fraude ;
-Vérifier le respect des conditions générales qui régissent l’utilisation de notre site web (y compris surveiller les messages privés envoyés par le biais du service de messagerie privé de notre site web) ; et
-D’autres utilisations.
-Si vous soumettez des informations personnelles sur notre site web dans le but de les publier, nous les publierons et pourrons utiliser ces informations conformément aux autorisations que vous nous accordez.
-Vos paramètres de confidentialité peuvent être utilisés pour limiter la publication de vos informations sur notre site web et peuvent être ajustés dans vos paramètres de confidentialité sur le site web.
-Sans votre consentement explicite, nous ne fournirons pas vos informations personnelles à des tierces parties pour leur marketing direct, ni celui d’autres tierces parties.
+                    <p>Il est important pour nous de collecter et conserver vos donn&eacute;es dans le cadre du traitement de vos commandes et de leur envoi en bonne et d&ucirc; forme. Nous collectons &eacute;galement vos donn&eacute;es pour vous tenir inform&eacute; de nos nouveaut&eacute;s produits, nos offres sp&eacute;ciales et nos alertes soldes. Plus nous avons d&rsquo;informations personnelles vous concernant, mieux nous pouvons personnaliser les offres que nous vous envoyons par le biais de notre newsletter et faire en sorte qu&rsquo;elles correspondent &agrave; votre style et int&eacute;r&ecirc;t.</p>
 
-E. Divulgation de vos informations personnelles
+                    <p>Vous avez le contr&ocirc;le total en ce qui concerne la r&eacute;ception des informations que nous vous communiquons, et vous pouvez &agrave; tout moment vous d&eacute;sinscrire de notre Newsletter avec effet imm&eacute;diat.</p>
 
-Nous pouvons divulguer vos informations personnelles à n’importe lequel de nos employés, dirigeants, assureurs, conseillers professionnels, agents, fournisseurs, ou sous-traitants dans la mesure où cela est raisonnablement nécessaire aux fins énoncées dans cette politique.
-Nous pouvons divulguer vos informations personnelles à n’importe quel membre de notre groupe d’entreprises (cela signifie nos filiales, notre société holding ultime et toutes ses filiales) dans la mesure où cela est raisonnablement nécessaire aux fins énoncées dans cette politique.
-Nous pouvons divulguer vos informations personnelles:
-Dans la mesure où nous sommes tenus de le faire par la loi ;
-Dans le cadre de toute procédure judiciaire en cours ou à venir ;
-Pour établir, exercer ou défendre nos droits légaux (y compris fournir des informations à d’autres à des fins de prévention des fraudes et de réduction des risques de crédit) ;
-À l’acheteur (ou acheteur potentiel) de toute entreprise ou actif en notre possession que nous souhaitons (ou envisageons de) vendre ; et
-À toute personne que nous estimons raisonnablement faire partie intégrante d’un tribunal ou autre autorité compétente pour la divulgation de ces informations personnelles si, selon notre opinion, un tel tribunal ou une telle autorité serait susceptible de demander la divulgation de ces informations personnelles.
-Sauf disposition contraire de la présente politique, nous ne transmettrons pas vos informations personnelles à des tierces parties.
+                    <p class="inline-header">EST-CE S&Eacute;CURIS&Eacute; ?</p>
 
-F. Transferts internationaux de données
+                    <p>Oui, nous prot&eacute;geons avec la plus grande attention les donn&eacute;es que vous nous confiez. Nous utilisons un logiciel et une technologie leader sur le march&eacute; pour assurer la protection de vos donn&eacute;es. Si nous utilisons les services d&rsquo;une entreprise dite &ldquo;tierce partie&rdquo; ou &ldquo;partenaire&rdquo;, nous nous assurons qu&rsquo;ils poss&egrave;dent les standards de s&eacute;curit&eacute; de l&rsquo;industrie pour acc&eacute;der &agrave; notre base de donn&eacute;es.</p>
 
-Les informations que nous collectons peuvent être stockées, traitées et transférées dans tous les pays dans lesquels nous opérons, afin de nous permettre d’utiliser les informations en accord avec cette politique.
-Les informations que nous collectons peuvent être transférées dans les pays suivants, n’ayant pas de lois de protections des données équivalentes à celles en vigueur dans l’espace économique européen : les États-Unis d’Amérique, la Russie, le Japon, la Chine et l’Inde.
-Les informations personnelles que vous publiez sur notre site web ou que vous soumettez à la publication peuvent être disponibles, via internet, dans le monde entier. Nous ne pouvons empêcher l’utilisation, bonne ou mauvaise, de ces informations par des tiers.
-Vous acceptez expressément le transfert d’informations personnelles décrit dans cette Section F.
+                    <p class="inline-header">COMMENT UTILISONS-NOUS VOS DONN&Eacute;ES ?</p>
 
-G. Conservation de vos informations personnelles
+                    <p>Lorsque vous nous fournissez vos informations personnelles, vous pouvez &ecirc;tre s&ucirc;r qu'elles seront s&eacute;curis&eacute;es. Nous ne vendons aucune de vos donn&eacute;es personnelles &agrave; des tiers - y compris votre nom, num&eacute;ro de t&eacute;l&eacute;phone, adresse, adresse e-mail et carte de cr&eacute;dit / informations de paiement.</p>
 
-Cette Section G détaille nos politiques de conservation des données et nos procédures, conçues pour nous aider à nous conformer à nos obligations légales concernant la conservation et la suppression d’informations personnelles.
-Les informations personnelles que nous traitons à quelque fin que ce soit ne sont pas conservées plus longtemps que nécessaire à cette fin ou à ces fins.
-Sans préjudice à l’article G-2, nous supprimerons généralement les données personnelles de ces catégories à la date et à l’heure précisées plus bas:
-Ce type de données personnelles sera supprimé {ENTREZ LA DATE/L’HEURE} ; et
-{ENTREZ D’AUTRES DATES/HEURES}.
-Nonobstant les autres dispositions de cette Section G, nous conserverons des documents (y compris des documents électroniques) contenant des données personnelles:
-Dans la mesure où nous sommes tenus de le faire par la loi ;
-Si nous pensons que les documents peuvent être pertinents pour toute procédure judiciaire en cours ou potentielle ; et
-Pour établir, exercer ou défendre nos droits légaux (y compris fournir des informations à d’autres à des fins de prévention des fraudes et de réduction des risques de crédit).
+                    <p>Cependant, il nous arrive de partager vos donn&eacute;es personnelles avec les diff&eacute;rentes cat&eacute;gories d&rsquo;entreprise ci-dessous, dans le but de vous fournir nos services :</p>
 
-H. Sécurité de vos informations personnelles
+                    <ul>
+                        <li>Entreprises avec qui nous travaillons pour vous faire parvenir vos commandes, comme les prestataires de services de paiement, nos entrep&ocirc;ts ou encore les entreprises de livraison.</li>
+                        <li>Les prestataires de services professionnels qui nous aident &agrave; exercer notre activit&eacute; comme nos partenaires publicitaires, les plateformes de technologies marketing ainsi que nos h&eacute;bergeurs de site internet.</li>
+                    </ul>
 
-Nous prendrons des précautions techniques et organisationnelles raisonnables pour empêcher la perte, l’abus ou l’altération de vos informations personnelle.
-Nous stockerons toutes les informations personnelles que vous nous fournissez sur des serveurs sécurisés (protégés par mot de passe et pare-feu).
-Toutes les transactions financières électroniques effectuées par le biais de notre site web seront protégées par des technologies de cryptage.
-Vous reconnaissez que la transmission d’informations par internet est intrinsèquement non sécurisée, et que nous ne pouvons pas garantir la sécurité de vos données envoyées par internet.
-Vous êtes responsable de la confidentialité du mot de passe que vous utilisez pour accéder à notre site web ; nous ne vous demanderons pas votre mot de passe (sauf quand vous vous identifiez sur notre site web).
+                    <p>En tant que responsable du traitement des donn&eacute;es, nous traiterons vos donn&eacute;es personnelles de la mani&egrave;re suivante:</p>
 
-I. Amendements
+                    <p>Si vous parcourez notre site Web :</p>
 
-Nous pouvons parfois mettre cette politique à jour en publiant une nouvelle version sur notre site web. Vous devez vérifier cette page régulièrement pour vous assurer de prendre connaissance de tout changement effectué à cette politique. Nous pouvons vous informer des changements effectués à cette politique par courrier électronique ou par le biais du service de messagerie privée de notre site web.
+                    <ul>
+                        <li>Adresse IP</li>
+                        <li>Comportement sur le site &agrave; des fins de marketing</li>
+                    </ul>
 
-J. Vos droits
+                    <p>Si vous souscrivez &agrave; notre newsletter :</p>
 
-Vous pouvez nous demander de vous fournir toute information personnelle que nous détenons sur vous ; le transfert de telles informations sera soumis aux conditions suivantes:
-Le règlement de frais {ENTREZ LES FRAIS SI PERTINENT}; et
-La présentation de preuves suffisantes de votre identité {AJUSTEZ LE TEXTE POUR REFLÉTER VOTRE POLITIQUE} (à ces fins, nous acceptons en général une photocopie de votre passeport certifiée par notaire plus une copie originale d’une facture de service public indiquant votre adresse actuelle).
-Nous pouvons retenir les informations personnelles que vous demandez dans la mesure autorisée par la loi.
-Vous pouvez nous demander à tout moment de ne pas traiter vos informations personnelles à des fins marketing.
-En pratique, vous exprimerez expressément et à l’avance votre accord pour que nous utilisions vos informations personnelles à des fins marketing ou nous vous fournirons une opportunité de refuser l’utilisation de vos informations personnelles à des fins marketing.
+                    <ul>
+                        <li>Adresse email</li>
+                        <li>Vos preferences newsletter</li>
+                        <li>Quels sont les produits sur lesquels vous avez cliqu&eacute; et/ou mis dans votre panier</li>
+                    </ul>
 
-K. Sites web tiers
+                    <p>Si vous avez un compte Onepiece :</p>
 
-Notre site web contient des liens hypertextes menant vers des sites web tiers et des informations les concernant. Nous n’avons aucun contrôle sur ces sites, et ne sommes pas responsables de leurs politiques de confidentialité ni de leurs pratiques.
+                    <ul>
+                        <li>Adresse email</li>
+                        <li>Nom (optionnel)</li>
+                        <li>Genre (optionnel)</li>
+                        <li>Adresse (optionnel)</li>
+                        <li>Num&eacute;ro de t&eacute;l&eacute;phone (optionnel)</li>
+                        <li>Wishlist (optionnel)</li>
+                        <li>Cartes-cadeaux (optionnel)</li>
+                        <li>Historique des commandes (optionnel)</li>
+                    </ul>
 
-L. Mise à jour des informations
+                    <p>Si vous passez / avez d&eacute;j&agrave; plac&eacute; une commande avec nous :</p>
 
-Merci de nous faire savoir si les informations personnelles que nous détenons à votre sujet doivent être corrigées ou mises à jour.
+                    <ul>
+                        <li>Adresse email</li>
+                        <li>Nom complet</li>
+                        <li>Num&eacute;ro de t&eacute;l&eacute;phone</li>
+                        <li>Adresse de livraison et / ou de facturation</li>
+                        <li>Genre</li>
+                        <li>Informations de carte de cr&eacute;dit (nous transmettons en toute s&eacute;curit&eacute; vos donn&eacute;es &agrave; nos partenaires de paiement, nous ne stockons pas vos informations de carte de cr&eacute;dit)</li>
+                    </ul>
 
-M. Cookies
+                    <p>Si vous commandez des produits ou une carte-cadeau pour le compte d'un tiers, vous &ecirc;tes tenu responsable de l'obtention de son consentement &agrave; la soumission de ses donn&eacute;es personnelles.</p>
 
-Notre site web utilise des cookies. Un cookie est un fichier contenant un identifiant (une chaîne de lettres et de chiffres) envoyé par un serveur web vers un navigateur web et stocké par le navigateur. L’identifiant est alors renvoyé au serveur à chaque fois que le navigateur demande une page au serveur. Les cookies peuvent être « persistants » ou « de session » : un cookie persistant est stocké par le navigateur et reste valide jusqu’à sa date d’expiration, à moins d’être supprimé par l’utilisateur avant cette date d’expiration ; quant à un cookie de session, il expire à la fin de la session utilisateur, lors de la fermeture du navigateur. Les cookies ne contiennent en général aucune information permettant d’identifier personnellement un utilisateur, mais les informations personnelles que nous stockons à votre sujet peuvent être liées aux informations stockées dans les cookies et obtenues par les cookies. {SÉLECTIONNEZ LA FORMULE ADAPTÉE Nous n’utilisons que des cookies de session / que des cookies persistants / des cookies de session et des cookies persistants sur notre site web.}
-Les noms des cookies que nous utilisons sur notre site web et les objectifs dans lesquels nous les utilisons sont décrits ci-dessous:
-Nous utilisons Google Analytics et Adwords sur notre site web pour : {INCLUEZ TOUTES LES MANIÈRES DONT LES COOKIES SONT UTILISÉS SUR VOTRE SITE} reconnaître un ordinateur lorsqu’un utilisateur consulte le site web/ suivre les utilisateurs lors de leur navigation sur le site web/ activer l’utilisation d’un panier sur le site web/ améliorer l’utilisation d’un site web/ analyser l’utilisation du site web/ administrer le site web/ empêcher la fraude et améliorer la sécurité du site web/ personnaliser le site web pour chaque utilisateur/ envoyer des publicités ciblées pouvant intéresser certains utilisateurs (décrivez vos autres objectifs);
-La plupart des navigateurs vous permettent de refuser ou d’accepter les cookies. Par exemple:
-avec Internet Explorer (version 10), vous pouvez bloquer les cookies en utilisant les paramètres de remplacement de la gestion des cookies disponibles en cliquant sur «Outils», «Options internet», «Confidentialité» puis «Avancé»;
-avec Firefox (version 24), vous pouvez bloquer tous les cookies en cliquant sur «Outils», «Options», «Confidentialité» puis en sélectionnant «Utiliser des paramètres personnalisés pour l’historique» depuis le menu déroulant et en décochant «Accepter les cookies provenant des sites»; et
-avec Chrome (version 29), vous pouvez bloquer tous les cookies en accédant au menu «Personnaliser et contrôler» puis en cliquant sur «Paramètres», «Montrer les paramètres avancés» et «Paramètres de contenu» puis en sélectionnant «Empêcher les sites de définir des données» dans l’en-tête «Cookies».
-Bloquer tous les cookies aura un impact négatif sur l’utilisation de nombreux sites web. Si vous bloquez les cookies, vous ne pourrez pas utiliser toutes les fonctionnalités de notre site web.
-Vous pouvez supprimer les cookies déjà stockés sur votre ordinateur. Exemple:
-avec Internet Explorer (version 10), vous devez supprimer le fichier cookies manuellement (vous pourrez trouver des instructions pour le faire ici http://support.microsoft.com/kb/278835);
-avec Firefox (version 24), vous pouvez supprimer les cookies en cliquant sur «Outils», «Options», et «Confidentialité», puis en sélectionnant «Utiliser des paramètres personnalisés pour l’historique» et en cliquant sur «Montrer les cookies», puis sur «Supprimer tous les cookies»; et
-avec Chrome (version 29), vous pouvez supprimer tous les cookies en accédant au menu «Personnaliser et contrôler» puis en cliquant sur «Paramètres», « Montrer les paramètres avancés » et «Supprimer les données de navigation» puis «Supprimer les cookies et les données des modules d’autres sites» avant de cliquer sur «Supprimer les données de navigation».
-Supprimer les cookies aura un impact négatif sur l’utilisation de nombreux sites web.
-Website Planet décline toute responsabilité et vous conseille de consulter des experts juridiques si vous implémentez le modèle ci-dessus sur votre site web.
+                    <p class="inline-header">PENDANT COMBIEN DE TEMPS SAUVEGARDONS-NOUS VOS DONN&Eacute;ES ?</p>
+
+                    <p>Nous conserverons vos donn&eacute;es, utilis&eacute;es &agrave; des fins de marketing direct, pour un total de cinq ans. Pour le marketing par e-mail, nous vous consid&eacute;rons comme un client inactif (et supprimons par la suite vos donn&eacute;es) si vous n'avez pas ouvert d'e-mail au cours des trois derni&egrave;res ann&eacute;es. Apr&egrave;s ces p&eacute;riodes, vos donn&eacute;es personnelles seront supprim&eacute;es.</p>
+
+                    <p>Nous nous r&eacute;servons le droit de sauvegarder vos donn&eacute;es &agrave; des fins l&eacute;gales et fiscales pour un total de cinq ans. Vous pouvez vous retirer de notre marketing direct pendant cette p&eacute;riode.</p>
+
+                    <p class="inline-header">QU&rsquo;ATTENDONS-NOUS DE VOUS ?</p>
+
+                    <p>Pour vous assurer la s&eacute;curit&eacute; maximale dans la collecte de vos donn&eacute;es, nous vous demandons de garder votre mot de passe et autres acc&egrave;s &agrave; vos informations secrets. Veillez &agrave; ce que personne ne fasse de commandes &agrave; votre place quand vous &ecirc;tes connect&eacute; &agrave; votre compte Onepiece et veillez &agrave; toujours vous d&eacute;connecter quand vous quittez votre session.</p>
+
+                    <p class="inline-header">COMMENT PUIS-JE CHANGER LES R&Eacute;GLAGES RELATIFS &Agrave; MON COMPTE?</p>
+
+                    <p>Si vous souhaitez modifier votre adresse de livraison, votre adresse e-mail ou votre mot de passe, vous pouvez vous connecter &agrave; votre compte ici: <a href="https://www.onepiece.com/account">www.onepiece.com/account</a>. Vous pouvez &eacute;galement consulter l'historique de vos commandes, votre wishlist, vos cartes-cadeaux et vos comptes sociaux associ&eacute;s (Facebook et Google+).</p>
+
+                    <p>Vous &ecirc;tes responsable de nous fournir des informations personnelles exactes et de les mettre &agrave; jour si n&eacute;cessaire.</p>
+
+                    <p class="inline-header">LES COOKIES</p>
+
+                    <p>Un cookie est un petit fichier texte enregistr&eacute; sur votre ordinateur ou votre t&eacute;l&eacute;phone lorsque vous visitez un site Web. Si vous utilisez nos services en ligne, nous supposerons que vous acceptez l'utilisation de ce cookie.</p>
+
+                    <p>Nous utilisons les cookies suivants quand vous visitez notre site internet:</p>
+
+                    <ol>
+                        <li>Les cookies fonctionnels du site internet - ils vous permettent de naviguer sur notre site internet et d&rsquo;utiliser nos fonctionnalit&eacute;s suivantes comme &ldquo;Ajouter au panier&rdquo; et &ldquo;Ajouter &agrave; la wishlist&rdquo;</li>
+                        <li>Les cookies d&rsquo;analyse du site internet - ils nous permettent de mesurer et analyser le comportement de nos clients sur notre site internet, dans le but d&rsquo;am&eacute;liorer les fonctionnalit&eacute;s et l&rsquo;exp&eacute;rience shopping.</li>
+                        <li>Les cookies de pr&eacute;f&eacute;rence Clients - ils nous permettent de garder en m&eacute;moire vos pr&eacute;f&eacute;rences de navigation et d&rsquo;achat sur notre site internet (cf. localisation), nous pouvons ainsi vous offrir l'exp&eacute;rience shopping la plus agr&eacute;able possible, et rendre votre commande facile et la plus rapide possible.</li>
+                        <li>Les cookies publicitaires et de ciblage marketing - utilis&eacute;s pour vous adresser des publicit&eacute;s pertinentes. Ils limitent &eacute;galement le nombre de fois qu&rsquo;une publicit&eacute; s&rsquo;affiche et nous aident &agrave; mesurer l&rsquo;efficacit&eacute; de nos campagnes marketing.</li>
+                    </ol>
+
+                    <p><a href="/fr-fr/shop/info/cookies">Cliquez ici pour voir la liste compl&egrave;te des cookies que nous utilisons sur notre site Web.</a></p>
+
+                    <p>En utilisant notre site internet, vous acceptez que Onepiece d&eacute;pose ce type de cookies sur votre appareil et utilise les informations enregistr&eacute;es dans le cookie pour vos futures visites. Si vous souhaitez supprimer n&rsquo;importe quel cookie qui se trouve sur votre appareil, nous vous recommandons de visiter la section &ldquo;Aide&rdquo; de votre navigateur web. Veuillez noter que supprimer ou bloquer les cookies peut affecter votre exp&eacute;rience shopping, vous ne pourrez pas utiliser toutes les fonctionnalit&eacute;s de notre site internet et rendre votre visite et commande la plus agr&eacute;able qui soit.</p>
+
+                    <p class="inline-header">COMMENT JE MODIFIE MES INFORMATIONS PERSONNELLES ET MES PR&Eacute;F&Eacute;RENCES EMAILS ?</p>
+
+                    <p>La Loi 15/1999 sur la Protection des Donn&eacute;es &agrave; Caract&egrave;re Personnel vous donne le droit d'acc&egrave;s &agrave; toutes donn&eacute;es personnelles vous concernant en notre possession.</p>
+
+                    <p>Nous avons une politique de d&eacute;sabonnement &agrave; notre Newsletter dite &ldquo;en un clic&rdquo;, ce qui signifie que dans chacune de nos communications, nous vous permettons de vous d&eacute;sinscrire de nos futures Newsletter Onepiece &agrave; travers un lien en bas de chaque email.</p>
+
+                    <p>Veuillez noter cependant que certaines informations que nous vous communiquons ne vous permettent pas de vous d&eacute;sabonner, c&rsquo;est le cas des informations intrins&egrave;ques li&eacute;es &agrave; nos services. Ces informations comprennent le/les changement(s) de votre commande, et &eacute;galement les informations concernant vos retours et &eacute;changes.</p>
+
+                    <p class="inline-header">MODIFICATIONS APPORT&Eacute;ES &Agrave; CETTE POLITIQUE DE CONFIDENTIALIT&Eacute;</p>
+
+                    <p>Cette politique de confidentialit&eacute; est correcte &agrave; la date du 22/05/2018</p>
+
+                    <p class="inline-header">INFORMATION RELATIVE &Agrave; L'ENTREPRISE</p>
+
+                    <p>Notre adresse principale et notre Si&egrave;ge Social est le suivant : Onepiece Jump In AS, Eilert Sundts Gate 41, 0355 Oslo, Norway. Notre num&eacute;ro d&rsquo;immatriculation en Norv&egrave;ge est le suivant: 995135469.</p>
+
+                    <p>Les entit&eacute;s locales Onepiece sont les suivantes:</p>
+
+                    <ul>
+                        <li>Royaume-Uni et Australie: Onepiece Jump In Limited</li>
+                        <li>Etats-Unis et Canada: Onepiece America LLC</li>
+                        <li>Tous les autres pays: Onepiece Jump In AS</li>
+                    </ul>
+
+                    <p>L'entit&eacute; Onepiece responsable de vos achats sur notre site Web et du traitement de vos donn&eacute;es personnelles d&eacute;pendra de la mani&egrave;re dont vous interagissez avec notre site et o&ugrave; vous vous situez dans le monde.</p>
+
+                    <p class="inline-header">CONTACTEZ-NOUS</p>
+
+                    <p>
+                        Si vous avez une question sur notre politique de confidentialit&eacute; ou toute autre demande, merci de nous contacter &agrave; l&rsquo;adresse email suivante <a href="mailto:support@onepiece.com">support@onepiece.com</a>
+                    </p>
+
+                </div>
+            </div>
+        </section>
+        <div id="sm-congrats" class="sm-modal reveal-modal" data-reveal aria-hidden="true" role="dialog">
+            <img data-src="https://onepiece-storage.storage.googleapis.com/assets/gfx/theme/smm-congrats.jpg">
+            <div class="row text-center">
+                <div class="small-12 columns type1 down1">
+                    Bravo ! </div>
+            </div>
+            <div class="row text-center">
+                <div class="small-12 columns type2">
+                    Vous avez gagné<br /> un jumpsuit ! </div>
+            </div>
+            <div class="row text-center">
+                <div class="small-12 columns type3">
+                    Nous avons ajouté la réduction à votre panier ! </div>
+            </div>
+        </div>
+
+        <div id="sm-disco" class="sm-modal reveal-modal " data-reveal aria-hidden="true" role="dialog">
+            <img data-src="https://onepiece-storage.storage.googleapis.com/assets/gfx/theme/smm-congrats.jpg">
+            <div class="row text-center">
+                <div class="small-12 columns type1 down1">
+                    Bravo ! </div>
+            </div>
+            <div class="row text-center">
+                <div class="small-12 columns type2">
+                    Vous avez gagné ! </div>
+            </div>
+            <div class="row text-center">
+                <div class="small-12 columns type3">
+                    Nous avons ajouté une réduction de 20% à votre panier ! </div>
+            </div>
+        </div>
+
+        <div id="sm-email" class="sm-modal reveal-modal" data-reveal aria-hidden="true" role="dialog">
+            <img data-src="https://onepiece-storage.storage.googleapis.com/assets/gfx/theme/smm-email.jpg">
+            <div class="row text-center">
+                <div class="small-12 columns type4 down1">
+                    Email invalide </div>
+            </div>
+            <div class="row text-center">
+                <div class="small-12 columns type1">
+                    Il semble y avoir un problème avec votre e-mail </div>
+            </div>
+            <div class="row text-center">
+                <div class="small-12 columns type3">
+                    Veuillez retaper votre email. </div>
+            </div>
+        </div>
+
+        <div id="sm-checkbox" class="sm-modal reveal-modal" data-reveal aria-hidden="true" role="dialog">
+            <img data-src="https://onepiece-storage.storage.googleapis.com/assets/gfx/theme/smm-email.jpg">
+            <div class="row text-center">
+                <div class="small-12 columns type4 down1">
+                    Donnée invalide </div>
+            </div>
+            <div class="row text-center">
+                <div class="small-12 columns type1">
+                    Pour participer à ce jeu concours vous devez accepter de recevoir notre newsletter </div>
+            </div>
+            <div class="row text-center">
+                <div class="small-12 columns type3">
+                    Merci de cocher la case lors de l’étape précédente ! </div>
+            </div>
+        </div>
+
+        <div id="sm-once" class="sm-modal reveal-modal" data-reveal aria-hidden="true" role="dialog">
+            <img data-src="https://onepiece-storage.storage.googleapis.com/assets/gfx/theme/smm-once.jpg">
+            <div class="row text-center">
+                <div class="small-12 columns type4 down2">
+                    Calm down </div>
+            </div>
+            <div class="row text-center">
+                <div class="small-12 columns type1">
+                    Vous pouvez seulement<br />participer une fois </div>
+            </div>
+        </div>
+
+        <div id="sm-unlucky" class="sm-modal reveal-modal " data-reveal aria-hidden="true" role="dialog">
+            <img data-src="https://onepiece-storage.storage.googleapis.com/assets/gfx/theme/smm-unlucky.jpg">
+            <div class="row text-center">
+                <div class="small-12 columns type2">
+                    Pas de chance ! </div>
+            </div>
+            <div class="row text-center">
+                <div class="small-12 columns type5">
+                    Mais ici tout le monde est gagnant donc nous venons d'ajouter une réduction de 10% à votre panier ! </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

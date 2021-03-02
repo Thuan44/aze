@@ -14,7 +14,7 @@ body {
   margin: 0;
   background-color: #F9F9F9;
   padding-bottom: 16rem;
-  min-height: 91.7vh;
+  min-height: 93.7vh;
   height: 100%;
   background: url("../assets/img/background.jpg") no-repeat center center;
   background-size: cover;
@@ -59,14 +59,22 @@ p {
   border-bottom-right-radius: 20px;
 }
 
-.navbar {
+.navbar-front {
   padding-top: 20px;
-  padding-bottom: 0px;
+  padding-bottom: 10px;
   padding-left: 50px;
   padding-right: 50px;
 }
 
-.navbar a:hover {
+.navbar-front a:hover {
+  color: rgba(73, 187, 112, 0.7) !important;
+}
+
+.navbar-back {
+  padding: 20px 50px 40px;
+}
+
+.navbar-back a:hover {
   color: rgba(73, 187, 112, 0.7) !important;
 }
 
@@ -100,7 +108,7 @@ p {
   width: 120px;
   height: auto;
   position: absolute;
-  top: 80%;
+  top: 85%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -352,6 +360,10 @@ input.form-control {
   font-size: 1.1rem !important;
 }
 
+.form-container {
+  background-color: #fff !important;
+}
+
 .form-envelope {
   font-size: 2rem !important;
 }
@@ -424,7 +436,21 @@ footer {
   .container-fluid {
     padding: 0 50px;
   }
-  .navbar {
+  .fo-btn {
+    position: absolute !important;
+    left: 250px !important;
+    top: 22px !important;
+  }
+  .bo-btn {
+    display: none !important;
+  }
+  .bo-btn-small {
+    display: block !important;
+    position: absolute !important;
+    left: 15px !important;
+    top: 15px !important;
+  }
+  .navbar-front {
     padding-bottom: 20px;
   }
   .logo {
@@ -450,10 +476,16 @@ footer {
   .second-nav {
     display: none !important;
   }
-  .navbar-toggler {
+  .navbar-toggler-front {
     position: absolute;
     right: 15px;
     top: 10px;
+  }
+  .greeting {
+    display: none;
+  }
+  .nav-item-bo {
+    margin-left: 20px !important;
   }
   #carouselExampleIndicators {
     margin-top: 150px;

@@ -167,8 +167,6 @@ if($received_data->action == 'incrementproductquantity')
 }
 
 
-
-
 # CART =================================
 // Display all products in cart
 if($received_data->action == 'fetchallproductsincart')
@@ -208,7 +206,7 @@ if($received_data->action == 'deleteproduct')
 
 // Confirm total to pay
 if($received_data->action == 'confirm-total-to-pay') 
-{
+{   
     $query = "INSERT INTO payment (total_to_pay) VALUES (?)";
     $result = $connection->prepare($query);
     $result->execute([$received_data->totalToPay]);

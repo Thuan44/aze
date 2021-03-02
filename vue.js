@@ -546,7 +546,7 @@ const Cart = {
                         <input id="total-to-pay" class="text-right total-input form-control bg-light" :value="totalToPay" />
                     </div>
                     <div class="btn-checkout shadow-sm">
-                        <button type="submit" class="btn btn-success form-control" @click="confirmTotalToPay()">
+                        <button type="submit" class="btn btn-success form-control" @click="confirmTotalToPay">
                             <span class="pl-1">Procéder au paiement <i class="fas fa-credit-card"></i></span>
                         </button>
                     </div>
@@ -632,15 +632,11 @@ const Cart = {
                 }).then(response => (console.log(response)))
         },
         confirmTotalToPay() {
-            console.log('ok');
             console.log(this.totalToPay);
             axios
                 .post('admin/action.php', {
                     action: 'confirm-total-to-pay',
                     totalToPay: this.totalToPay
-                })
-                .then(response => {
-                    console.log(response)
                 })
                 .catch((error) => {
                     console.warn('Not good man :(');

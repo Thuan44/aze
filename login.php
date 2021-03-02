@@ -22,7 +22,7 @@ if (isset($_POST)) {
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body style="background-color: #fff">
+<body>
 
     <h1 class="rounded border p-2 m-4 text-center text-white bg-primary text-uppercase">AZE CRÉATION</h1>
 
