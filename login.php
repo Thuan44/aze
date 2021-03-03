@@ -1,7 +1,7 @@
 <?php
 ob_start();
-include_once './admin/pdo.php';
-include_once './admin/functions.php';
+include_once 'admin/pdo.php';
+include_once 'admin/functions.php';
 ?>
 
 <?php 

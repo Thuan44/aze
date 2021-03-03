@@ -1,22 +1,45 @@
-<footer class="bg-primary">
+<footer class="bg-secondary">
 
-    <div class="container-fluid d-flex justify-content-between align-items-center pt-4 footer-container">
-        <div class="flags d-flex">
-            <div class="flag-img mr-2">
-                <img class="w-100" src="./assets/img/france.png" alt="drapeau france">
+    <div class="container-fluid d-flex justify-content-around align-items-center flex-column py-4 footer-container h-100">
+
+        <div class="social-media text-secondary d-flex align-items-center">
+            <div class="social-icon"><a href="https://www.facebook.com/azecreation" target="_blank"><i class="fab fa-facebook"></i></a></div>
+            <div class="left-stick mx-4"></div>
+            <div class="social-icon"><a href="https://www.instagram.com/azecreation/" target="_blank"><i class="fab fa-instagram"></i></a></div>
+            <div class="right-stick mx-4"></div>
+            <div class="social-icon"><a href="#"><i class="fab fa-whatsapp" target="_blank"></i></a></div>
+        </div>
+
+        <div class="bg-primary divider-footer"></div>
+
+        
+        <div class="footer-services d-flex justify-content-around align-items-start w-50 text-uppercase">
+            <div class="footer-section text-center d-flex flex-column justify-content-center align-items-center">
+                <h6>Service Clients</h6>
+                <router-link class="text-secondary footer-links" to="/contact">Contact</router-link>
+                <a class="text-secondary footer-links" href="privacyPolice.php" target="_blank">Politique de confidentalité</a>
+                <a class="text-secondary footer-links" href="login.php">Connexion</a>
             </div>
-            <div class="flag-img">
-                <img class="w-100" src="./assets/img/uk.png" alt="drapeau uk">
+            <div class="footer-section text-center d-flex flex-column justify-content-center align-items-center">
+                <h6>Entreprise</h6>
+                <a class="text-secondary footer-links" href="#">Histoire AZE</a>
+                <a class="text-secondary footer-links" href="#">Blog</a>
+                <a class="text-secondary footer-links" href="#">Presse</a>
+            </div>
+            <div class="footer-section text-center d-flex flex-column justify-content-center align-items-center">
+                <h6>Partenaires</h6>
+                <a class="text-secondary footer-links" href="#">Commercial et distribution</a>
+                <a class="text-secondary footer-links" href="#">Amassadeurs de marque</a>
             </div>
         </div>
 
-        <div class="copyright text-white">© 2021 AZE Création</div>
+        <div class="copyright text-secondary d-flex flex-column justify-content-center align-items-center mt-4">
+            <small>© Copyright 2017-21 AZE Creation</small><br>
+            <small>Tous droits réservés</small><br>
+            <small><a href="privacyPolice.php" target="_blank">Politique de confidentalité</a></small><br>
 
-        <div class="social-media text-white d-flex">
-            <div class="social-icon mr-2"><i class="fab fa-facebook"></i></div>
-            <div class="social-icon mr-2"><i class="fab fa-instagram"></i></div>
-            <div class="social-icon"><i class="fab fa-whatsapp"></i></div>
         </div>
+            
     </div>
 
 </footer>
@@ -24,8 +47,7 @@
 </div>
 
 <!-- Cookie banner -->
-<script type="text/javascript" id="cookieinfo"
-	src="//cookieinfoscript.com/js/cookieinfo.min.js" data-message="Ce site utilise des cookies pour améliorer votre expérience utilisateur. En continuant la navigation, vous acceptez que nous les utilisions à des fins d'optimisation." data-linkmsg="Plus d'informations" data-divlinkbg="#ED9D2B" data-divlink="#fff@">
+<script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js" data-message="Ce site utilise des cookies pour améliorer votre expérience utilisateur. En continuant la navigation, vous acceptez que nous les utilisions à des fins d'optimisation. Vous confirmez également avoir lu et approuvé notre politique de confidentialité" data-linkmsg="Plus d'informations" data-moreinfo="privacyPolicy.php" data-divlinkbg="#ED9D2B" data-divlink="#fff@">
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

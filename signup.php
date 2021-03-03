@@ -126,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // if the request method used is POS
                         <!-- RGPD -->
                         <div class="col-md-12 mb-3 d-flex align-items-start">
                             <input type="checkbox" id="rgpd" class="mr-2" required aria-label="rgpd" title="RGPD">
-                            <small><label for="rgpd">J'ai lu la <a href="privacyPolicy.php">charte de confidentialité</a> et en accepte les termes</label></small>
+                            <small><label for="rgpd">J'ai lu la <a href="privacyPolicy.php" target="_blank" >charte de confidentialité</a> et en accepte les termes</label></small>
                         </div>
 
                         <!-- Submit -->

@@ -207,6 +207,7 @@ if($received_data->action == 'deleteproduct')
 // Confirm total to pay
 if($received_data->action == 'confirm-total-to-pay') 
 {   
+    var_dump($received_data->totalToPay);
     $query = "INSERT INTO payment (total_to_pay) VALUES (?)";
     $result = $connection->prepare($query);
     $result->execute([$received_data->totalToPay]);

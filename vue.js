@@ -539,14 +539,14 @@ const Cart = {
 
             </table>
 
-            <form action="#">
+            <form action="http://localhost:8888/aze/index.php#/cart" method="POST" @submit.prevent="confirmTotalToPay">
                 <div class="total-group d-flex flex-column">
                     <div class="d-flex align-items-center total-to-pay form-group mb-2 shadow-sm">
                         <label for="total-to-pay" class="mb-0 total-label bg-primary text-white form-control text-uppercase text-center">Total à payer</label>
-                        <input id="total-to-pay" class="text-right total-input form-control bg-light" :value="totalToPay" />
+                        <input id="total-to-pay" class="text-right total-input form-control bg-light" :value="totalToPay" disabled/>
                     </div>
                     <div class="btn-checkout shadow-sm">
-                        <button type="submit" class="btn btn-success form-control" @click="confirmTotalToPay">
+                        <button type="submit "class="btn btn-success form-control">
                             <span class="pl-1">Procéder au paiement <i class="fas fa-credit-card"></i></span>
                         </button>
                     </div>

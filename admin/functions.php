@@ -301,3 +301,15 @@ function deleteReview($reviewId) {
     $result = $connection->prepare($query);
     $result->execute();
 }
+
+
+
+# PAYMENT ================
+function getTotalToPay($userId) {
+    global $connection;
+
+    $query = "SELECT total_to_pay FROM payment WHERE user_id = $userId";
+
+    $result = $connection->prepare($query);
+    $result->execute();
+}
