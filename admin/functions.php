@@ -303,13 +303,25 @@ function deleteReview($reviewId) {
 }
 
 
-
 # PAYMENT ================
-function getTotalToPay($userId) {
+function getTotalToPay() {
     global $connection;
+    $userId = $_SESSION['user_id'];
 
     $query = "SELECT total_to_pay FROM payment WHERE user_id = $userId";
 
     $result = $connection->prepare($query);
     $result->execute();
+    return $result->fetch();
+}
+
+function getPaymentId() {
+    global $connection;
+    $userId = $_SESSION['user_id'];
+
+    $query = "SELECT payment_id FROM payment WHERE user_id = $userId";
+
+    $result = $connection->prepare($query);
+    $result->execute();
+    return $result->fetch();
 }

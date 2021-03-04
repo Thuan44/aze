@@ -1,11 +1,17 @@
 <?php
-$sellerEmail = 'sb-43li4c5211489@business.example.com';/*email associé au compte paypal du vendeur*/
-$cartId = '04AAA'; /*Numéro du produit en vente*/
-$totalToPay   = '40';    /*prix du produit*/
-$item_nom    = 'nom de l\'item'; /*Nom du produit*/
-$url_retour = 'http://localhost:8888/aze/paypalThanks.php?id=10';/*page de remerciement à créer*/
-$url_cancel = 'http://localhost:8888/aze/paypalCancel.php?id=10'; /*page d'annulation d'achat*/
-$url_confirmation = 'http://localhost:8888/aze/paypalConfirm.php?id=10';/*page de confirmation d'achat*/
+require_once 'admin/pdo.php';
+require_once 'admin/functions.php';
+@$userId = $_SESSION['user_id'];
+
+$sellerEmail      = 'sb-43li4c5211489@business.example.com';/*email associé au compte paypal du vendeur*/
+$totalToPay       = getTotalToPay(); /*prix total à payer*/
+$totalToPay       = floatval($totalToPay['total_to_pay']);
+$paymentId        = getPaymentId(); /*Numéro du paiement*/
+$paymentId        = intval($paymentId['payment_id']);
+$item_nom         = $_SESSION['user_name']; /*Nom du produit*/
+$url_retour       = "http://localhost:8888/aze/paypalThanks.php?id=";/*page de remerciement à créer*/
+$url_cancel       = "http://localhost:8888/aze/paypalCancel.php?id="; /*page d'annulation d'achat*/
+$url_confirmation = "http://localhost:8888/aze/paypalConfirm.php?id=";/*page de confirmation d'achat*/
 ?>
 
 <!DOCTYPE html>
@@ -31,20 +37,20 @@ $url_confirmation = 'http://localhost:8888/aze/paypalConfirm.php?id=10';/*page d
             <small class="card-text">Cher client, nous vous informons que de nouveaux moyens de paiement serons bientôt disponibles. Merci pour votre patience !</small>
         </div>
 
-        <form action="https://sandbox.paypal.com" method="POST">
+        <form action="https://www.sandbox.paypal.com/" method="POST">
 
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="<?php echo $sellerEmail ?>" />
             <input type="hidden" name="item_name" value="<?php echo $item_nom ?>" />
-            <input type="hidden" name="item_number" value="<?php echo $cartId ?>" />
+            <input type="hidden" name="item_number" value="<?php echo $paymentId ?>" />
             <input type="hidden" name="amount" value="<?php echo $totalToPay ?>" />
             <input type="hidden" name="currency_code" value="EUR" />
             <input type="hidden" name="no_note" value="1" />
             <input type="hidden" name="no_shipping" value="0" />
             <input type="hidden" name="lc" value="FR" />
-            <input type="hidden" name="notify_url" value="<?php echo $url_confirmation ?>" />
-            <input type="hidden" name="cancel_return" value="<?php echo $url_cancel ?>">
-            <input type="hidden" name="return" value="<?php echo $url_retour ?>">
+            <input type="hidden" name="notify_url" value="<?php echo $url_confirmation . $userId ?>" />
+            <input type="hidden" name="cancel_return" value="<?php echo $url_cancel . $userId?>">
+            <input type="hidden" name="return" value="<?php echo $url_retour . $userId?>">
             <input align="right" valign="center" type="image" alt="Paiement par Paypal" src=" https://www.paypal.com/fr_FR/i/bnr/horizontal_solution_PP.gif" border="0" name="submit" alt="Paiement sécurisé par paypal" />
 
         </form>

@@ -539,7 +539,7 @@ const Cart = {
 
             </table>
 
-            <form action="http://localhost:8888/aze/index.php#/cart" method="POST" @submit.prevent="confirmTotalToPay">
+            <form action="#" method="POST" @submit.prevent="confirmTotalToPay">
                 <div class="total-group d-flex flex-column">
                     <div class="d-flex align-items-center total-to-pay form-group mb-2 shadow-sm">
                         <label for="total-to-pay" class="mb-0 total-label bg-primary text-white form-control text-uppercase text-center">Total à payer</label>
@@ -641,6 +641,7 @@ const Cart = {
                 .catch((error) => {
                     console.warn('Not good man :(');
                 })
+            window.location.href = "paypalForm.php";
         }
     },
     computed: {
