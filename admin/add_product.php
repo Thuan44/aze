@@ -31,7 +31,7 @@ if (isset($_POST['add'])) {
 
                 <!-- Categories -->
                 <div class="col-12">
-                    <div class="form-group">
+                    <div class="form-group border">
                         <select class="custom-select" name="category_id" onChange="submit()" required>
                             <option selected="">1. Choisissez une catégorie</option>
                             <?php foreach ($listCategories as $category) : ?>
@@ -50,31 +50,31 @@ if (isset($_POST['add'])) {
             <div class="row">
                 <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                        <input class="form-control" type="text" name="product_name" placeholder="Choisissez un nom">
+                        <input class="form-control border" type="text" name="product_name" placeholder="Choisissez un nom">
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                        <input class="form-control" type="text" name="product_price" placeholder="Choisissez un prix">
+                        <input class="form-control border" type="text" name="product_price" placeholder="Choisissez un prix">
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <div class="form-group">
-                        <input class="form-control" type="text" name="product_stock" placeholder="Définissez le stock">
+                        <input class="form-control border" type="text" name="product_stock" placeholder="Définissez le stock">
                     </div>
                 </div>
             </div>
 
             <!-- Description -->
             <div class="form-group">
-                <textarea class="form-control" name="product_description" id="Product description" value="Ajoutez une description" rows="3" style="color: #919AA1;">Description du produit</textarea>
+                <textarea class="form-control border" name="product_description" id="Product description" value="Ajoutez une description" rows="3" style="color: #919AA1;">Description du produit</textarea>
             </div>
 
             <!-- Upload image -->
             <div class="form-group">
                 <div class="input-group mb-3">
-                    <div class="custom-file">
-                        <input type="file" name="file[]" multiple="multiple" class="custom-file-input" id="inputGroupFile02">
+                    <div class="custom-file border">
+                        <input type="file" name="file[]" multiple="multiple" class="custom-file-input border" id="inputGroupFile02">
                         <label class="custom-file-label" for="inputGroupFile02">Choisissez une image principale</label>
                     </div>
                 </div>

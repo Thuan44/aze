@@ -20,7 +20,10 @@ include_once 'functions.php';
     <!-- NAVBAR -->
     <nav class="navbar navbar-back navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand font-weight-bold" href="index.php">AZE | <span class="text-warning">Back-Office</span></a>
-        <a href="../index.php" class="btn btn-warning btn-sm fo-btn">Front-Office</a>
+        <?php if (@($_SESSION['user_role']) == 5) { ?>
+            <a href="../index.php" class="btn btn-warning btn-sm fo-btn">Front-Office</a>
+            <a href="../index.php" class="btn btn-warning btn-sm fo-btn-small d-none">FO</a>
+        <?php } ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

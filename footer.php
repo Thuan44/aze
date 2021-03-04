@@ -17,12 +17,12 @@
             <div class="footer-section text-center d-flex flex-column justify-content-center align-items-center">
                 <h6>Service Clients</h6>
                 <router-link class="text-secondary footer-links" to="/contact">Contact</router-link>
-                <a class="text-secondary footer-links" href="privacyPolice.php" target="_blank">Politique de confidentalité</a>
+                <a class="text-secondary footer-links" href="privacyPolicy.php" target="_blank">Politique de confidentalité</a>
                 <a class="text-secondary footer-links" href="login.php">Connexion</a>
             </div>
             <div class="footer-section text-center d-flex flex-column justify-content-center align-items-center">
                 <h6>Entreprise</h6>
-                <a class="text-secondary footer-links" href="#">Histoire AZE</a>
+                <router-link class="text-secondary footer-links" to="/about">Histoire AZE</router-link>
                 <a class="text-secondary footer-links" href="#">Blog</a>
                 <a class="text-secondary footer-links" href="#">Presse</a>
             </div>
@@ -36,8 +36,7 @@
         <div class="copyright text-secondary d-flex flex-column justify-content-center align-items-center mt-4">
             <small>© Copyright 2017-21 AZE Creation</small><br>
             <small>Tous droits réservés</small><br>
-            <small><a href="privacyPolice.php" target="_blank">Politique de confidentalité</a></small><br>
-
+            <small><a href="privacyPolicy.php" target="_blank">Politique de confidentalité</a></small><br>
         </div>
             
     </div>

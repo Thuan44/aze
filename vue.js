@@ -33,7 +33,7 @@ const Home = {
                 </a>
             </div>
             
-            <h1 class="mt-5 text-center tous-nos-produits" style="font-family: 'Fjalla One', sans-serif;">Tous nos produits</h1>
+            <h1 class="mt-5 text-center tous-nos-produits h1-home" style="font-family: 'Fjalla One', sans-serif;">Tous nos produits</h1>
             <p class="text-center">Le street wear nantais mixte, éthique et Made in France</p>
             <div class="divider"></div>
 
@@ -88,8 +88,7 @@ const Home = {
                                         <p class="card-text mb-3">{{ product.category_name }}</p>
                                         <h4 class="product-price">{{ product.product_price }}€</h4>
                                         <div class="d-flex justify-content-center">
-                                            <router-link :to="{name: 'ProductSheet', params: { id: product.product_id }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
-                                            <!-- <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id)" class="btn btn-warning rounded-lg btn-card text-capitalize"><i class="fas fa-cart-plus"></i></button> -->
+                                            <router-link :to="{name: 'ProductSheet', params: { id: product.product_id }}" class="btn btn-dark btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
                                         </div>
                                     </div>
                                 </div>
@@ -110,8 +109,7 @@ const Home = {
                                         <p class="card-text mb-3">{{ product.category_name }}</p>
                                         <h4 class="product-price">{{ product.product_price }}€</h4>
                                         <div class="d-flex justify-content-center">
-                                            <router-link :to="{name: 'ProductSheet', params: { id: product.product_id }}" class="btn btn-dark rounded-lg btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
-                                            <!-- <button :disabled="product.product_stock == 0" @click="addToCart(product.product_id)" class="btn btn-warning rounded-lg btn-card text-capitalize"><i class="fas fa-cart-plus"></i></button> -->
+                                            <router-link :to="{name: 'ProductSheet', params: { id: product.product_id }}" class="btn btn-dark btn-card text-capitalize mr-2"><i class="far fa-eye"></i></router-link>
                                         </div>
                                     </div>
                                 </div> <!-- card.// -->
@@ -189,6 +187,75 @@ const Home = {
 }
 
 
+const About = {
+    template: `
+        <div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-6 col-xl-6">
+                        <div class="about-background">
+                            <img src="assets/img/about_us_background_compressed.jpg" alt="about us picture">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <h1 class="mt-5 text-center cart-title h1-front h1-about" style="font-family: 'Fjalla One', sans-serif;">Histoire d'Aze</h1>
+                        <p class="text-center" style="color: #777">Valoriser la beauté, non pas du corps mais des corps, loin des stéréotypes classiques véhiculés par le milieu de la mode d’aujourd’hui</p>
+                        <div class="divider"></div>
+                        <p class="text-justify">
+                            Créative, j'ai eu envie très jeune d'évoluer dans le milieu artistique. C'est en 2006 que j'ai commencé mes études de stylisme modélisme à « ESMOD », que j'ai par la suite complété par un Cap métier de la mode et du vêtement flou et un double certificat professionnel en stylisme et modélisme en prêt à porter femme. <br><br>
+                            
+                            Travailler dans le domaine de la couture, en acquérir les techniques et les subtilités c'était pour moi perpétuer la tradition d'un savoir faire artisanal, ancestral et culturel. Du dessin au vêtement fini, mes études m’ont permises de maîtriser toutes les étapes de la création d'un vêtement et plus largement d'une collection. <br><br>
+                            En 2013 j'ai intégré l'association  « Des femmes en fil », atelier d'insertion des femmes par la couture, au poste d'assistante dans lequel j’ai gravi les échelons jusqu’à prendre la gestion en 2015 pour devenir à mon tour chef d’atelier et chef modéliste. Retouches, sur mesure, costumes, création pour les stylistes nantais, les 3 années passées au sein de l’association m'ont ouverte à tous les domaines d'application de la couture et du stylisme. <br><br>
+
+                            <div class="last-para text-justify">
+                                Passionnée, avec l'envie sans cesse de me lancer dans de nouveaux projets, j'ai en parallèle organisé différents défilés de lingerie ou de prêt à porter, notamment pour la nuit du Van à « la cale 2 créateurs » de 2012 à 2016 ou encore pour l'événement « Brésil pluriel », avec toujours comme fil de trame, la volonté d’en faire de véritables spectacles mélangeant art visuel et spectacle vivant.
+                            </div>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-12 text-justify">
+                        <p class="text-justify">
+                            <div class="last-para-hidden text-justify d-none">
+                                Passionnée, avec l'envie sans cesse de me lancer dans de nouveaux projets, j'ai en parallèle organisé différents défilés de lingerie ou de prêt à porter, notamment pour la nuit du Van à « la cale 2 créateurs » de 2012 à 2016 ou encore pour l'événement « Brésil pluriel », avec toujours comme fil de trame, la volonté d’en faire de véritables spectacles mélangeant art visuel et spectacle vivant.
+                            </div> <br><br>
+
+                            En 2017 je m'installe aux ateliers partagés du Mékano pour créer mon atelier où je réalise des créations sur mesure, des vêtements de cérémonie, des costumes et où je crée AZE, ma marque de vêtements et accessoires streetwear éthique et mixte pour laquelle j'utilise autant que possible des cotons issus de l'agriculture biologique et des tissus récupérés dans une démarche de recyclage. <br><br>
+
+                            A travers cette marque et dans la continuité des défilés organisés au cours de ces dernières années, je tiens à valoriser la beauté, non pas du corps mais des corps, loin des stéréotypes classiques véhiculés par le milieu de la mode encore aujourd'hui. J'ai à cœur de faire défiler des hommes et des femmes de tout âges et de toutes origines ethniques et sociales promouvant ainsi une mixité à laquelle je crois. Je crois également au travail collectif, à l'échange de savoir entre les différentes cultures et à la valorisation par l'apprentissage. Ainsi je développe en parallèle depuis 1 an des cours de couture pour l’association « Papiers ciseaux » à Rezé et à  l'amicale laïque du Coudray au sein desquelles je m'efforce à la fois de créer une dynamique de groupe et de transmettre mon savoir-faire en accompagnant des personnes de tous niveaux dans leurs projets afin qu'elles prennent d'avantage confiance en elles.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-12 col-lg-4 mb-4">
+                        <router-link to="/" class="btn btn-outline-primary w-100 shadow-sm">Explorer la boutique</router-link>
+                    </div>
+                    <div class="col-6 col-lg-4 mb-2">
+                        <a href="#" class="btn btn-outline-primary w-100 shadow-sm">Évènements</a>
+                    </div>
+                    <div class="col-6 col-lg-4 mb-2">
+                        <a href="#" class="btn btn-outline-primary w-100 shadow-sm">Blog</a>
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>
+    `,
+    name: 'About',
+    data: () => {
+        return {
+        }
+    },
+}
+
+
 // Product Sheet
 const ProductSheet = {
     template: `
@@ -199,7 +266,7 @@ const ProductSheet = {
                 <div class="row justify-content-center">
 
                     <!-- PRODUCT IMAGES -->
-                    <div class="col-md-1 col-lg-1 px-0 align-self-center" align="center">
+                    <div class="col-md-1 col-lg-1 px-0 align-self-center extra-images" align="center">
                         <div v-if="relatedImg.extra_img1 != '' " class="product-extra-img mb-2 border">
                             <img :src="getExtraImgUrl(relatedImg.extra_img1)" alt="extra-product-image">
                         </div>
@@ -217,7 +284,7 @@ const ProductSheet = {
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 pr-4 align-self-center">
                         <div class="product-img">
                             <img :src="getImgUrl(relatedImg.img_name)" alt="image principale">
-                            <p class="font-italic text-center" style="color: rgba(50, 50, 50, .4)">Passez sur les miniatures les agrandir</p>
+                            <p class="font-italic text-center mb-4" style="color: rgba(50, 50, 50, .4)">Passez sur les miniatures les agrandir</p>
                         </div>
                     </div> <!-- col.// -->
 
@@ -230,7 +297,7 @@ const ProductSheet = {
                             <span v-else-if="product.product_stock < 10" class="text-warning"><u>Stock limité</u></span>
                             <span v-else class="text-success"><u>En stock</u></span>
                         </small>
-                        <div class="single-product-price text-danger">\${{ product.product_price }}</div>
+                        <div class="single-product-price text-danger">{{ product.product_price }}€</div>
                         <div class="product-divider"></div>
                         <div class="d-flex flex-column justify-content-between h-75 group-description-price">
                             <div class="product-description">
@@ -243,8 +310,8 @@ const ProductSheet = {
                             </div>
                             <div>
                                 <div class="product-divider"></div>
-                                <div class="product-validation float-right">
-                                    <button :disabled="product.product_stock == 0" @click="addToCart(); showToast()" type="submit" class="btn btn-outline-success btn-sm rounded shadow-sm" id="add-to-cart">Ajouter au panier</button></td>
+                                <div class="product-validation">
+                                    <button :disabled="product.product_stock == 0" @click="addToCart(); showToast()" type="submit" class="btn btn-outline-success btn-sm shadow-sm w-100" id="add-to-cart">Ajouter au panier</button></td>
                                 </div>
                             </div>
                         </div>
@@ -382,7 +449,7 @@ const ProductSheet = {
             }
         },
         addReview(productId) {
-            if (this.reviewContent !== '') {
+            if (this.reviewContent !== '') {
                 axios
                     .post('./admin/action.php', {
                         action: 'addreview',
@@ -442,7 +509,7 @@ const Contact = {
 
         <div class="container page-container">
 
-            <h1 class="mt-5 text-center page-title" style="font-family: 'Fjalla One', sans-serif;">Contact</h1><p class="text-center" style="color: #777">Restons en contact !</p>
+            <h1 class="mt-5 text-center page-title h1-front" style="font-family: 'Fjalla One', sans-serif;">Contact</h1><p class="text-center" style="color: #777">Restons en contact !</p>
             <div class="divider"></div>
 
             <div class="form-container shadow-sm rounded bg-white py-4 px-5" style="max-width: 600px; margin: 0 auto">
@@ -504,9 +571,9 @@ const Cart = {
     template: `
     <div>
     
-        <div v-if="currentUser.length == 1" class="container page-container cart-container">
+        <div v-if="currentUser.length == 1 && allProductsInCart.length > 0" class="container page-container cart-container">
 
-            <h1 class="mt-5 text-center cart-title" style="font-family: 'Fjalla One', sans-serif;">Panier</h1>
+            <h1 class="mt-5 text-center cart-title h1-front" style="font-family: 'Fjalla One', sans-serif;">Panier</h1>
             <p class="text-center" style="color: #777">Résumé des articles sélectionnés</p>
             <div class="divider"></div>
 
@@ -553,6 +620,12 @@ const Cart = {
                 </div>
             </form>
 
+        </div>
+
+        <div v-else-if="currentUser.length == 1 && allProductsInCart.length == 0">
+            <h1 class="mt-5 text-center cart-title" style="font-family: 'Fjalla One', sans-serif;">Oops</h1>
+            <p class="text-center" style="color: #777">Il n'y a rien dans votre panier !</p>
+            <router-link to="/"class="text-center d-block" style="color: #979797"><small>Explorer la boutique</small></router-link>
         </div>
 
         <div v-else>
@@ -666,6 +739,7 @@ const Cart = {
 const router = new VueRouter({
     routes: [
         { path: '/', component: Home, name: 'Home' },
+        { path: '/about', component: About, name: 'About' },
         { path: '/product-sheet/:id', component: ProductSheet, name: 'ProductSheet' },
         { path: '/contact', component: Contact, name: 'Contact' },
         { path: '/cart', component: Cart, name: 'Cart' }
@@ -694,5 +768,5 @@ const vue = new Vue({
         this.fetchAllCategories();
     },
     router,
-    components: { Home, Contact, Cart, ProductSheet }
+    components: { Home, About, Contact, Cart, ProductSheet }
 }).$mount('#app');

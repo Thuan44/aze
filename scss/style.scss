@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
     height: 100%;
 
-    background: url("../assets/img/background.jpg") no-repeat center center; 
+    background: url("../assets/img/background_compressed.jpg") no-repeat center center; 
     background-size: cover;
 }
 
@@ -81,6 +81,10 @@ p {
     }
 }
 
+.branding {
+    margin-left: 5px;
+}
+
 .branding:hover {
     text-decoration: none;
 }
@@ -124,7 +128,7 @@ p {
 }
 
 .second-nav {
-    padding-top: 15px;
+    padding-top: 5px;
     padding-left: 55px;
     margin-top: 60px;
 
@@ -134,6 +138,14 @@ p {
 
     a:hover {
         color: #7ECE9A !important;
+    }
+
+    ul {
+        margin-bottom: 10px;
+
+        li {
+            margin-right: 15px;
+        }
     }
 }
 
@@ -239,6 +251,17 @@ p {
     width: 250px;
     min-width: 250px;
 }
+
+
+// ABOUT ==========
+.about-background {
+    height: 750px;
+
+    img {
+        width: 100%;
+    }
+}
+
 
 // CART ================
 .cart-table {
@@ -436,6 +459,15 @@ footer {
     right: 0;
 }
 
+.cookieinfo-close {
+    width: 50px !important;
+    min-width: 50px !important;
+    height: 35px;
+    color: #fff;
+    border-radius: 0 !important;
+    background-color: #FFDC00 !important;
+}
+
 .divider-footer{
     width: 100px !important;
     height: 1px !important;
@@ -479,6 +511,28 @@ footer {
 
 // MEDIA QUERIES ===========
 
+// Normal Desktop
+@media screen and (max-width: 1250px) and (min-width: 968px) {
+
+    body{
+        padding-bottom: 500px;
+    }
+
+    .last-para {
+        display: none !important;
+    }
+
+    .last-para-hidden {
+        display: block !important;
+    }
+
+    footer {
+        height: 300px;
+        bottom: 0;
+    }
+
+}
+
 // Under Desktop //
 @media screen and (max-width: 992px) {
 
@@ -494,7 +548,7 @@ footer {
         top: 22px !important;
     }
 
-    .bo-btn {
+    .bo-btn, .fo-btn {
         display: none !important;
     }
 
@@ -503,6 +557,13 @@ footer {
         position: absolute !important;
         left: 15px !important;
         top: 15px !important;
+    }
+
+    .fo-btn-small {
+        display: block !important;
+        position: absolute !important;
+        left: 240px !important;
+        top: 22px !important;
     }
 
     .navbar-front {
@@ -569,6 +630,20 @@ footer {
         display: block !important;
     }
 
+    // About
+    .h1-about {
+        margin-top: 140px !important;
+    }
+
+    .about-background {
+        display: none;
+    }
+
+    // Product-sheet
+    .product-sheet-container {
+        margin-top: 150px !important;
+    }
+
     // Cart
     .cart-container {
         display: flex !important;
@@ -602,6 +677,10 @@ footer {
         padding-bottom: 500px;
     }
 
+    .navbar-nav-front {
+        margin-left: 32px !important;
+    }
+
     // Carousel
     .carousel {
         display: none;
@@ -610,6 +689,13 @@ footer {
     .tous-nos-produits {
         margin-top: 150px !important;
     }
+
+    // Product-sheet
+    .extra-images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } 
 
     // Cart
     .cart-table, .total-group {
@@ -634,15 +720,57 @@ footer {
 
 }
 
-@media screen and (max-width: 1250px) and (min-width: 968px) {
-
-    body{
-        padding-bottom: 500px;
+// Smartphone
+@media screen and (max-width: 480px) {
+    .navbar-nav {
+        margin-left: 0 !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    footer {
-        height: 300px;
-        bottom: 0;
+    .nav-item-contact, .nav-item-panier {
+        margin-right: 0 !important;
     }
 
+    .cookieinfo-close {
+        width: 100% !important;
+        margin-bottom: 10px 0 !important;
+    }
+
+    // About
+    .h1-about {
+        margin-top: 200px !important;
+    }
+    
+}
+
+// Small Smartphone
+@media screen and (max-width: 432px) {
+    .navbar {
+        .left-stick, .right-stick {
+            display: none;
+        }
+    }
+    
+    .h1-front {
+        margin-top: 130px !important;
+    }
+
+    .h1-home {
+        margin-top: 200px !important;
+    }
+
+    // Home
+    .filter-sidebar {
+        width: 260px !important;
+        margin: 0 auto !important;
+        min-width: 260px !important;
+    }
+
+    .social-media {
+        display: flex;
+        margin: 0 auto;
+    }
 }

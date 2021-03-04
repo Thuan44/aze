@@ -38,21 +38,21 @@ include_once 'admin/functions.php';
                 <div class="right-stick"></div>
             </router-link>
 
-            <?php if (@($_SESSION['user_role']) == 5 ) { ?>
+            <?php if (@($_SESSION['user_role']) == 5) { ?>
                 <a href="admin/index.php" class="btn btn-warning btn-sm ml-4 bo-btn">Back-Office</a>
-                <a href="admin/index.php" class="btn btn-warning btn-sm ml-4 bo-btn-small d-none">B0</a>
-                <?php } ?>
+                <a href="admin/index.php" class="btn btn-warning btn-sm ml-4 bo-btn-small d-none">BO</a>
+            <?php } ?>
 
             <button class="navbar-toggler navbar-toggler-front" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                <ul class="navbar-nav navbar-nav-front ml-auto">
+                    <li class="nav-item nav-item-contact">
                         <router-link class="nav-link text-secondary" to="/contact">Contact <span class="nav-icon"><i class="fas fa-comment"></i></span></router-link>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item nav-item-panier">
                         <router-link class="nav-link text-secondary" to="/cart">Panier <span class="nav-icon"><i class="fas fa-shopping-cart"></i></span></router-link>
                     </li>
                     <!-- Sign out button -->
@@ -67,14 +67,20 @@ include_once 'admin/functions.php';
                     <?php } ?>
                 </ul>
             </div>
-            
+
         </nav>
-        
-        
+
+
         <div class="second-nav bg-secondary pb-1 shadow-sm">
-            <ul class="d-flex list-unstyled">
-                <li v-for="category in allCategories" class="nav-item">
-                    <a href="#" class="nav-link text-secondary p-0">{{ category.category_name }}</a>
+            <ul class="d-flex pl-0 list-unstyled">
+                <li>
+                    <router-link class="nav-link text-secondary d-inline-block pl-0" to="/about">Histoire d'Aze</router-link>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-secondary d-inline-block pl-0">Évènements</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-secondary d-inline-block pl-0">Blog</a>
                 </li>
             </ul>
             <!-- Greeting  -->

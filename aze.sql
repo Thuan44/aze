@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : jeu. 25 fév. 2021 à 09:19
+-- Généré le : jeu. 04 mars 2021 à 17:10
 -- Version du serveur :  5.7.32
 -- Version de PHP : 7.4.12
 
@@ -37,11 +37,14 @@ INSERT INTO `cart` (`cart_id`, `product_id`, `user_id`, `product_quantity`) VALU
 (214, 12, 2, 2),
 (215, 23, 2, 1),
 (216, 8, 2, 1),
-(219, 30, 2, 1),
-(220, 41, 2, 1),
-(221, 38, 2, 1),
-(222, 39, 1, 1),
-(223, 39, 2, 1);
+(222, 39, 1, 2),
+(231, 50, 2, 2),
+(292, 47, 1, 1),
+(303, 43, 9, 1),
+(306, 47, 9, 2),
+(307, 50, 9, 3),
+(308, 51, 8, 2),
+(309, 47, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -93,7 +96,28 @@ INSERT INTO `images` (`img_id`, `img_name`, `product_id`, `extra_img1`) VALUES
 (29, '6035161b51ccc.jpg', 39, ''),
 (30, '60351661214e6.jpg', 40, ''),
 (31, '6035175d8fb02.jpg', 41, ''),
-(32, '60351779b0d18.jpg', 42, '');
+(32, '60351779b0d18.jpg', 42, ''),
+(33, '6039154d6b11a.jpg', 43, ''),
+(34, '6039168787965.jpg', 44, ''),
+(35, '6039172ca8008.jpg', 45, ''),
+(36, '6039177645c3b.jpg', 46, ''),
+(37, '6039180525345.jpg', 47, ''),
+(38, '603918286f658.jpg', 48, ''),
+(39, '60391847eccbb.jpg', 49, ''),
+(40, '6039186c78e83.jpg', 50, ''),
+(41, '603918ad90bb6.jpg', 51, '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `payment`
+--
+
+CREATE TABLE `payment` (
+  `payment_id` int(11) NOT NULL,
+  `total_to_pay` float NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -115,15 +139,15 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `product_price`, `product_stock`, `category_id`) VALUES
-(28, 'Masque tête de mort', 'À la mode ou sportif ? Votre style est unique.\r\nC\'est vous qui choisissez le style que vous voulez porter. Vous disposez de plusieurs catégories : couleurs pleines, géométries, motifs et différents visuels. Faites votre choix parmi les 270 motifs disponibles. Si vous ne trouvez pas ce que vous recherchez, vous avez la possibilité de télécharger votre visuel et ainsi personnaliser votre trumask™ à partir d\'un seul exemplaire.\r\n', 9.99, 15, 2),
-(30, 'Masque cercles', 'Masque grand public en tissu à motifs cerclés, fabriqué en France, catégorie 1.', 8.99, 6, 2),
-(34, 'Veste en jeans', 'Veste en jeans bleu denim avec col et manches longues. Les manches sont boutonnées. Cette veste se portera parfaitement au printemps comme en automne.', 69.99, 26, 1),
-(37, 'Short en jeans', 'Short en jean taille haute à revers - Bleu moyen', 29.99, 30, 1),
-(38, 'Sweat enfant', 'Sweat à capuche pour enfant entre 9 et 11 ans, multi-color et adapté à l\'hiver', 45.99, 16, 3),
-(39, 'Masque à pois', 'Masque à pois taille adulte, fabriqué en France. Confortable et aéré, vous pourrez le porter toute la journée sans craindre d\'être gêné.', 7.99, 25, 2),
-(40, 'Masque Navy', 'Masque en tissu couleur navy qui se fondra parfaitement avec votre tenue d\'hiver. Confortable et aéré, vous pourrez le porter tout au long de la journée sans craindre d\'être gêné.', 10.99, 40, 2),
-(41, 'Masque éventail', 'Masque à motifs éventails rose pale. Taille adulte, lanière élastiques et étirables. Sa légèreté vous garantira un confort optimal tout au long de votre journée. Idéale pour les balades longue durée.', 9.99, 4, 2),
-(42, 'Masque éventail 2', 'Masque à motifs éventails vert pale. Taille adulte, lanière élastiques et étirables. Sa légèreté vous garantira un confort optimal tout au long de votre journée. Idéale pour les balades longue durée.', 9.99, 0, 2);
+(43, 'Masque éventail', 'Masque à motifs éventails rose pale. Taille adulte, lanière élastiques et étirables. Sa légèreté vous garantira un confort optimal tout au long de votre journée. Idéale pour les balades longue durée.', 9.99, 45, 2),
+(44, 'Veste en jeans', 'Veste en jeans bleu denim avec col et manches longues. Les manches sont boutonnées. Cette veste se portera parfaitement au printemps comme en automne.', 69.99, 26, 1),
+(45, 'Short en jeans', 'Short en jean taille haute à revers - Bleu moyen', 29.99, 30, 1),
+(46, 'Masque tête de mort', 'À la mode ou sportif ? Votre style est unique.\r\nC\'est vous qui choisissez le style que vous voulez porter. Vous disposez de plusieurs catégories : couleurs pleines, géométries, motifs et différents visuels. Faites votre choix parmi les 270 motifs disponibles. Si vous ne trouvez pas ce que vous recherchez, vous avez la possibilité de télécharger votre visuel et ainsi personnaliser votre trumask™ à partir d\'un seul exemplaire.\r\n', 9.99, 15, 2),
+(47, 'Masque à pois', 'Masque à pois taille adulte, fabriqué en France. Confortable et aéré, vous pourrez le porter toute la journée sans craindre d\'être gêné.', 7.99, 25, 2),
+(48, 'Masque Navy', 'Masque en tissu couleur navy qui se fondra parfaitement avec votre tenue d\'hiver. Confortable et aéré, vous pourrez le porter tout au long de la journée sans craindre d\'être gêné.', 10.99, 23, 2),
+(49, 'Masque éventail 2', 'Masque à motifs éventails vert pale. Taille adulte, lanière élastiques et étirables. Sa légèreté vous garantira un confort optimal tout au long de votre journée. Idéale pour les balades longue durée.', 9.99, 0, 2),
+(50, 'Masque cercles', 'Masque grand public en tissu à motifs cerclés, fabriqué en France, catégorie 1.', 8.99, 6, 2),
+(51, 'Sweat enfant', 'Sweat à capuche pour enfant entre 9 et 11 ans, multi-color et adapté à l\'hiver', 45.99, 16, 3);
 
 -- --------------------------------------------------------
 
@@ -144,7 +168,8 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`review_id`, `review_content`, `product_id`, `user_id`, `is_valid`) VALUES
-(16, 'Super masque ! Je ne regrette pas du tout mon achat.', 30, 2, 1);
+(16, 'Super masque ! Je ne regrette pas du tout mon achat.', 30, 2, 1),
+(19, 'Super masque et très joli', 47, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -165,11 +190,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_role`) VALUES
-(1, 'Admin', 'admin@gmail.com', 'admin', 5),
-(2, 'Guest', 'guest@gmail.com', 'guest', 1),
-(3, 'Visitor', 'visitor@gmail.com', 'visitor', 1),
-(5, 'Visitor2', 'visitor2@gmail.com', 'visitor2', 1),
-(6, 'Visitor3', 'visitor3@gmail.com', 'visitor3', 1);
+(8, 'Guest', 'guest@gmail.com', '$2y$10$PMXoJD0yhjqkw5qVqMfMh.SyFFAWonFYceX4D551ixS0yfqRSdQ5S', 1),
+(9, 'Admin', 'admin@gmail.com', '$2y$10$AzXbsL38kq4Yd.weZuhyge/rU4uInpuZy4FNWChoGjAOq5khEOW5G', 5),
+(43, 'Thuan', 'congthuan274@gmail.com', '$2y$10$w8zDheDH6hywbUHT9um8Xe0jzwi/IE0Szm9zPIdrJJoLNEQap.2Zm', 1);
 
 --
 -- Index pour les tables déchargées
@@ -192,6 +215,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`img_id`);
+
+--
+-- Index pour la table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`payment_id`);
 
 --
 -- Index pour la table `products`
@@ -219,7 +248,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=310;
 
 --
 -- AUTO_INCREMENT pour la table `categories`
@@ -231,22 +260,28 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT pour la table `images`
 --
 ALTER TABLE `images`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT pour la table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT pour la table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;

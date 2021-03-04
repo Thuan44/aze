@@ -43,7 +43,7 @@ $listReviewsByProduct = listReviewsByProduct($productId);
 
                 <!-- Categories -->
                 <div class="col-6">
-                    <div class="form-group">
+                    <div class="form-group border">
                         <select class="custom-select" name="category_id" onChange="submit()" required>
                             <option selected="">1. Choisissez une catégorie</option>
                             <?php foreach ($listCategories as $category) : ?>
@@ -58,7 +58,7 @@ $listReviewsByProduct = listReviewsByProduct($productId);
 
                 <!-- Products -->
                 <div class="col-6">
-                    <div class="form-group">
+                    <div class="form-group border">
                         <select class="custom-select" name="product_id" onChange="submit()" required>
                             <option>2. Choisissez un produit</option>
                             <?php foreach ($listProducts as $product) : ?>

@@ -16,7 +16,7 @@ body {
   padding-bottom: 25rem;
   min-height: 100vh;
   height: 100%;
-  background: url("../assets/img/background.jpg") no-repeat center center;
+  background: url("../assets/img/background_compressed.jpg") no-repeat center center;
   background-size: cover;
 }
 
@@ -78,6 +78,10 @@ p {
   color: rgba(73, 187, 112, 0.7) !important;
 }
 
+.branding {
+  margin-left: 5px;
+}
+
 .branding:hover {
   text-decoration: none;
 }
@@ -124,7 +128,7 @@ p {
 }
 
 .second-nav {
-  padding-top: 15px;
+  padding-top: 5px;
   padding-left: 55px;
   margin-top: 60px;
 }
@@ -136,6 +140,14 @@ p {
 
 .second-nav a:hover {
   color: #7ECE9A !important;
+}
+
+.second-nav ul {
+  margin-bottom: 10px;
+}
+
+.second-nav ul li {
+  margin-right: 15px;
 }
 
 .greeting {
@@ -249,6 +261,14 @@ p {
   vertical-align: top;
   width: 250px;
   min-width: 250px;
+}
+
+.about-background {
+  height: 750px;
+}
+
+.about-background img {
+  width: 100%;
 }
 
 .cart-table {
@@ -424,6 +444,15 @@ footer {
   right: 0;
 }
 
+.cookieinfo-close {
+  width: 50px !important;
+  min-width: 50px !important;
+  height: 35px;
+  color: #fff;
+  border-radius: 0 !important;
+  background-color: #FFDC00 !important;
+}
+
 .divider-footer {
   width: 100px !important;
   height: 1px !important;
@@ -459,6 +488,22 @@ footer {
   opacity: .7;
 }
 
+@media screen and (max-width: 1250px) and (min-width: 968px) {
+  body {
+    padding-bottom: 500px;
+  }
+  .last-para {
+    display: none !important;
+  }
+  .last-para-hidden {
+    display: block !important;
+  }
+  footer {
+    height: 300px;
+    bottom: 0;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .container-fluid {
     padding: 0 50px;
@@ -468,7 +513,7 @@ footer {
     left: 250px !important;
     top: 22px !important;
   }
-  .bo-btn {
+  .bo-btn, .fo-btn {
     display: none !important;
   }
   .bo-btn-small {
@@ -476,6 +521,12 @@ footer {
     position: absolute !important;
     left: 15px !important;
     top: 15px !important;
+  }
+  .fo-btn-small {
+    display: block !important;
+    position: absolute !important;
+    left: 240px !important;
+    top: 22px !important;
   }
   .navbar-front {
     padding-bottom: 20px;
@@ -537,6 +588,15 @@ footer {
   .product-container {
     display: block !important;
   }
+  .h1-about {
+    margin-top: 140px !important;
+  }
+  .about-background {
+    display: none;
+  }
+  .product-sheet-container {
+    margin-top: 150px !important;
+  }
   .cart-container {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
@@ -568,11 +628,25 @@ footer {
   body {
     padding-bottom: 500px;
   }
+  .navbar-nav-front {
+    margin-left: 32px !important;
+  }
   .carousel {
     display: none;
   }
   .tous-nos-produits {
     margin-top: 150px !important;
+  }
+  .extra-images {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .cart-table, .total-group {
     -webkit-transform: scale(0.8);
@@ -598,13 +672,55 @@ footer {
   }
 }
 
-@media screen and (max-width: 1250px) and (min-width: 968px) {
-  body {
-    padding-bottom: 500px;
+@media screen and (max-width: 480px) {
+  .navbar-nav {
+    margin-left: 0 !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  footer {
-    height: 300px;
-    bottom: 0;
+  .nav-item-contact, .nav-item-panier {
+    margin-right: 0 !important;
+  }
+  .cookieinfo-close {
+    width: 100% !important;
+    margin-bottom: 10px 0 !important;
+  }
+  .h1-about {
+    margin-top: 200px !important;
+  }
+}
+
+@media screen and (max-width: 432px) {
+  .navbar .left-stick, .navbar .right-stick {
+    display: none;
+  }
+  .h1-front {
+    margin-top: 130px !important;
+  }
+  .h1-home {
+    margin-top: 200px !important;
+  }
+  .filter-sidebar {
+    width: 260px !important;
+    margin: 0 auto !important;
+    min-width: 260px !important;
+  }
+  .social-media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=style.css.map */

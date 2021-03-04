@@ -44,7 +44,7 @@ $listProducts = listProducts($categoryId, $brandId);
 
                 <!-- Categories -->
                 <div class="col-xs-12 col-md-6">
-                    <div class="form-group">
+                    <div class="form-group border">
                         <select class="custom-select" name="category_id" onChange="submit()" required>
                             <option selected="">1. Choisissez une catégorie</option>
                             <?php foreach ($listCategories as $category): ?>
@@ -59,7 +59,7 @@ $listProducts = listProducts($categoryId, $brandId);
 
                 <!-- Products -->
                 <div class="col-xs-12 col-md-6">
-                    <div class="form-group">
+                    <div class="form-group border">
                         <select class="custom-select" name="product_id" onChange="submit()" required>
                             <option>2. Choisissez un produit</option>
                             <?php foreach ($listProducts as $product): ?>
@@ -77,31 +77,31 @@ $listProducts = listProducts($categoryId, $brandId);
                 <div class="row">
                     <!-- Product Name -->
                     <div class="col-4">
-                        <div class="form-group">
+                        <div class="form-group border">
                             <input class="form-control" type="text" name="product_name" placeholder="Nom du produit" value="<?= @$getProductById['product_name'] ?>">
                         </div>
                     </div>
                     <!-- Product Price -->
                     <div class="col-4">
-                        <div class="form-group">
+                        <div class="form-group border">
                             <input class="form-control" type="text" name="product_price" placeholder="Prix du produit" value="<?= @$getProductById['product_price'] ?>">
                         </div>
                     </div>
                     <!-- Product Stock -->
                     <div class="col-4">
-                        <div class="form-group">
+                        <div class="form-group border">
                             <input class="form-control" type="text" name="product_stock" placeholder="Quantité du produit" value="<?= @$getProductById['product_stock'] ?>">
                         </div>
                     </div>
                 </div>
                 
                 <!-- Description -->
-                <div class="form-group">
+                <div class="form-group border">
                     <textarea class="form-control" name="product_description" id="Product Description" value="Description produit" rows="3" style="color: #919AA1;"><?= @$getProductById['product_description'] ?></textarea>
                 </div>
 
                 <!-- Upload extra image -->
-                <div class="form-group">
+                <div class="form-group border">
                     <div class="input-group mb-3">
                         <div class="custom-file">a
                             <input type="file" name="extra-img[]" multiple="multiple" class="custom-file-input" id="inputGroupFile02">
